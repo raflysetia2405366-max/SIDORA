@@ -5,78 +5,87 @@ function MapPage() {
   return (
     <div
       style={{
-        display: "flex",
-        gap: "20px",
-        padding: "25px",
         background: "#071019",
         minHeight: "100vh",
+        padding: "30px 20px",
       }}
     >
-      {/* Sidebar */}
-
-      <div
-        style={{
-          width: "320px",
-          flexShrink: 0,
-        }}
-      >
+      <div className="map-layout">
+        {/* Sidebar */}
         <Sidebar />
-      </div>
 
-      {/* Map */}
-
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
-        {/* Header */}
-
-        <div
-          style={{
-            background: "#111827",
-            border: "1px solid #1f2937",
-            borderRadius: "18px",
-            padding: "22px 28px",
-          }}
-        >
-          <h1
+        {/* Content */}
+        <div>
+          {/* Header */}
+          <div
             style={{
-              margin: 0,
-              color: "white",
-              fontSize: "32px",
+              background: "#111827",
+              border: "1px solid #1f2937",
+              borderRadius: "18px",
+              padding: "30px",
+              marginBottom: "20px",
             }}
           >
-            🗺 Peta Interaktif Desa Donowarih
-          </h1>
+            <h1
+              style={{
+                color: "white",
+                margin: 0,
+                fontSize: "clamp(28px,4vw,48px)",
+              }}
+            >
+              🗺 Peta Interaktif Desa Donowarih
+            </h1>
 
-          <p
-            style={{
-              color: "#9ca3af",
-              marginTop: "12px",
-              lineHeight: "28px",
-            }}
-          >
-            Menampilkan informasi spasial Desa Donowarih
-            berbasis WebGIS. Layer peta dapat
-            diaktifkan melalui panel sebelah kiri.
-          </p>
-        </div>
+            <p
+              style={{
+                marginTop: "15px",
+                color: "#9ca3af",
+                lineHeight: "30px",
+                fontSize: "clamp(14px,2vw,18px)",
+              }}
+            >
+              Sistem Informasi Geografis Desa Donowarih berbasis WebGIS.
+              Nantinya seluruh informasi spasial seperti batas desa,
+              batas dusun, jaringan jalan, sungai, dan fasilitas umum
+              dapat ditampilkan secara interaktif.
+            </p>
+          </div>
 
-        {/* Map */}
-
-        <div
-          style={{
-            background: "#111827",
-            borderRadius: "18px",
-            border: "1px solid #1f2937",
-            overflow: "hidden",
-          }}
-        >
+          {/* Map */}
           <MapView />
+
+          {/* Keterangan */}
+          <div
+            style={{
+              marginTop: "20px",
+              background: "#111827",
+              border: "1px solid #1f2937",
+              borderRadius: "18px",
+              padding: "25px",
+            }}
+          >
+            <h2
+              style={{
+                color: "#22c55e",
+                marginTop: 0,
+              }}
+            >
+              Informasi
+            </h2>
+
+            <p
+              style={{
+                color: "#cbd5e1",
+                lineHeight: "30px",
+                marginBottom: 0,
+              }}
+            >
+              Saat ini peta masih menggunakan basemap sebagai tampilan awal.
+              Setelah proses digitasi selesai, layer batas desa,
+              dusun, fasilitas umum, jalan, dan informasi spasial lainnya
+              akan ditampilkan langsung pada halaman ini.
+            </p>
+          </div>
         </div>
       </div>
     </div>
