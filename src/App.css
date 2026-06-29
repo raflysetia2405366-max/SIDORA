@@ -1,0 +1,15 @@
+.app{
+
+    background:#08111d;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    padding-top:82px;
+
+    min-height:calc(100vh - 82px);
+
+}

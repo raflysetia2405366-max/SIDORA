@@ -1,0 +1,49 @@
+.footer{
+
+background:#0b1220;
+
+border-top:1px solid #1f2937;
+
+padding:18px 50px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:#9ca3af;
+
+margin-top:70px;
+
+}
+
+.footer-left h2{
+
+margin:0;
+
+color:white;
+
+font-size:20px;
+
+}
+
+.footer-left p{
+
+margin-top:5px;
+
+font-size:13px;
+
+}
+
+.footer-center{
+
+font-size:14px;
+
+}
+
+.footer-right{
+
+font-size:13px;
+
+}
