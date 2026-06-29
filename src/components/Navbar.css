@@ -1,162 +1,200 @@
 .navbar{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-right:0;
-
-height:82px;
-
-background:#0b1220;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:0 45px;
-
-border-bottom:1px solid #1f2937;
-
-z-index:999;
-
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:#0b1220;
+    border-bottom:1px solid #1f2937;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    z-index:1000;
 }
 
+/* =================== */
+
 .navbar-left{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 .logo-circle{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
 
-width:58px;
+.logo-text h1{
+    color:white;
+    margin:0;
+    font-size:40px;
+}
 
-height:58px;
+.logo-text span{
+    color:#9ca3af;
+    font-size:14px;
+}
 
-border-radius:50%;
+/* =================== */
 
-background:linear-gradient(135deg,#16a34a,#22c55e);
+.navbar-menu{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
 
-display:flex;
+.navbar-menu a{
+    color:#d1d5db;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    padding-bottom:6px;
+}
 
-justify-content:center;
+.navbar-menu a:hover{
+    color:#22c55e;
+}
 
-align-items:center;
+.navbar-menu a.active{
+    color:#22c55e;
+    border-bottom:3px solid #22c55e;
+}
 
-font-size:28px;
+/* =================== */
+
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+}
+
+.online-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#22c55e;
+}
+
+/* =================== */
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* ===========================
+        TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.logo-text h1{
+    font-size:30px;
+}
+
+.navbar{
+    padding:0 20px;
+}
+
+.navbar-menu{
+    gap:18px;
+}
 
 }
 
-.navbar-left h1{
+/* ===========================
+            HP
+=========================== */
 
-margin:0;
+@media(max-width:768px){
 
-font-size:42px;
-
-color:white;
-
-letter-spacing:1px;
-
+.navbar{
+    padding:15px 20px;
+    height:auto;
+    flex-wrap:wrap;
 }
 
-.navbar-left span{
+.logo-text h1{
+    font-size:24px;
+}
 
-color:#9ca3af;
+.logo-text span{
+    font-size:11px;
+}
 
-font-size:14px;
+.menu-toggle{
+    display:block;
+}
 
+.navbar-right{
+    display:none;
 }
 
 .navbar-menu{
 
-display:flex;
+    width:100%;
 
-gap:35px;
+    display:none;
 
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:20px 0;
+
+}
+
+.navbar-menu.open{
+    display:flex;
 }
 
 .navbar-menu a{
-
-text-decoration:none;
-
-color:#d1d5db;
-
-font-size:17px;
-
-font-weight:600;
-
-padding-bottom:6px;
-
-transition:.3s;
+    font-size:16px;
+}
 
 }
 
-.navbar-menu a:hover{
+/* ===========================
+        HP KECIL
+=========================== */
 
-color:#22c55e;
+@media(max-width:480px){
 
-}
+.logo-circle{
 
-.navbar-menu .active{
+width:45px;
 
-color:#22c55e;
+height:45px;
 
-border-bottom:3px solid #22c55e;
-
-}
-
-.navbar-right{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-color:white;
+font-size:22px;
 
 }
 
-.online-dot{
+.logo-text h1{
 
-width:10px;
-
-height:10px;
-
-background:#22c55e;
-
-border-radius:50%;
-
-animation:pulse 2s infinite;
+font-size:20px;
 
 }
 
-@keyframes pulse{
+.logo-text span{
 
-0%{
-
-box-shadow:0 0 0 0 rgba(34,197,94,.7);
+display:none;
 
 }
 
-70%{
-
-box-shadow:0 0 0 10px rgba(34,197,94,0);
-
-}
-
-100%{
-
-box-shadow:0 0 0 0 rgba(34,197,94,0);
-
-}
 }

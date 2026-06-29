@@ -1,92 +1,62 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar">
 
       <div className="navbar-left">
+        <div className="logo-circle">🌍</div>
 
-        <div className="logo-circle">
-          🌍
-        </div>
-
-        <div>
-
+        <div className="logo-text">
           <h1>SIDORA</h1>
-
-          <span>
-            Sistem Informasi Desa Donowarih
-          </span>
-
+          <span>Sistem Informasi Desa Donowarih</span>
         </div>
-
       </div>
 
-      <nav className="navbar-menu">
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
 
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+      <nav className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+
+        <NavLink to="/" onClick={closeMenu}>
           Dashboard
         </NavLink>
 
-        <NavLink
-          to="/map"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+        <NavLink to="/map" onClick={closeMenu}>
           Peta
         </NavLink>
 
-        <NavLink
-          to="/profile"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+        <NavLink to="/profile" onClick={closeMenu}>
           Profil Desa
         </NavLink>
 
-        <NavLink
-          to="/potensi"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+        <NavLink to="/potensi" onClick={closeMenu}>
           Potensi
         </NavLink>
 
-        <NavLink
-          to="/pelayanan"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+        <NavLink to="/pelayanan" onClick={closeMenu}>
           Pelayanan
         </NavLink>
 
-        <NavLink
-          to="/tentang"
-          className={({ isActive }) =>
-            isActive ? "active" : ""
-          }
-        >
+        <NavLink to="/tentang" onClick={closeMenu}>
           Tentang
         </NavLink>
 
       </nav>
 
       <div className="navbar-right">
-
         <div className="online-dot"></div>
-
         <span>Online</span>
-
       </div>
 
     </header>
