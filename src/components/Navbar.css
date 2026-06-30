@@ -9,11 +9,11 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 40px;
+    padding:0 30px;
     z-index:1000;
 }
 
-/* =================== */
+/* ================= */
 
 .navbar-left{
     display:flex;
@@ -22,178 +22,198 @@
 }
 
 .logo-circle{
-    width:55px;
-    height:55px;
+    width:52px;
+    height:52px;
     border-radius:50%;
     background:linear-gradient(135deg,#16a34a,#22c55e);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:28px;
+    font-size:24px;
 }
 
 .logo-text h1{
-    color:white;
     margin:0;
-    font-size:40px;
+    color:white;
+    font-size:34px;
 }
 
 .logo-text span{
     color:#9ca3af;
-    font-size:14px;
+    font-size:13px;
 }
 
-/* =================== */
+/* ================= */
 
 .navbar-menu{
     display:flex;
-    align-items:center;
-    gap:32px;
+    gap:28px;
 }
 
 .navbar-menu a{
     color:#d1d5db;
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
-    padding-bottom:6px;
+    transition:.25s;
 }
 
 .navbar-menu a:hover{
-    color:#22c55e;
+
+color:#22c55e;
+
 }
 
 .navbar-menu a.active{
-    color:#22c55e;
-    border-bottom:3px solid #22c55e;
+
+color:#22c55e;
+
 }
 
-/* =================== */
+/* ================= */
 
 .navbar-right{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:white;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
 }
 
 .online-dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:#22c55e;
+
+width:10px;
+
+height:10px;
+
+background:#22c55e;
+
+border-radius:50%;
+
 }
 
-/* =================== */
+/* ================= */
 
 .menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    color:white;
-    font-size:30px;
-    cursor:pointer;
+
+display:none;
+
+background:none;
+
+border:none;
+
+font-size:30px;
+
+color:white;
+
 }
 
-/* ===========================
-        TABLET
-=========================== */
+/* ========================= */
 
 @media(max-width:992px){
 
 .logo-text h1{
-    font-size:30px;
-}
 
-.navbar{
-    padding:0 20px;
+font-size:28px;
+
 }
 
 .navbar-menu{
-    gap:18px;
-}
+
+gap:18px;
 
 }
 
-/* ===========================
-            HP
-=========================== */
+}
+
+/* ========================= */
 
 @media(max-width:768px){
 
 .navbar{
-    padding:15px 20px;
-    height:auto;
-    flex-wrap:wrap;
-}
 
-.logo-text h1{
-    font-size:24px;
-}
+padding:0 18px;
 
-.logo-text span{
-    font-size:11px;
-}
-
-.menu-toggle{
-    display:block;
-}
-
-.navbar-right{
-    display:none;
-}
-
-.navbar-menu{
-
-    width:100%;
-
-    display:none;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:18px;
-
-    padding:20px 0;
-
-}
-
-.navbar-menu.open{
-    display:flex;
-}
-
-.navbar-menu a{
-    font-size:16px;
-}
-
-}
-
-/* ===========================
-        HP KECIL
-=========================== */
-
-@media(max-width:480px){
-
-.logo-circle{
-
-width:45px;
-
-height:45px;
-
-font-size:22px;
+height:80px;
 
 }
 
 .logo-text h1{
 
-font-size:20px;
+font-size:24px;
 
 }
 
 .logo-text span{
 
 display:none;
+
+}
+
+.navbar-right{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+/* menu */
+
+.navbar-menu{
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:#0b1220;
+
+border-bottom:1px solid #1f2937;
+
+display:none;
+
+flex-direction:column;
+
+padding:20px;
+
+gap:18px;
+
+}
+
+.navbar-menu.open{
+
+display:flex;
+
+}
+
+}
+
+/* ========================= */
+
+@media(max-width:480px){
+
+.logo-circle{
+
+width:42px;
+
+height:42px;
+
+font-size:20px;
+
+}
+
+.logo-text h1{
+
+font-size:20px;
 
 }
 

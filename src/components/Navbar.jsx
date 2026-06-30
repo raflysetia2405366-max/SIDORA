@@ -26,7 +26,10 @@ function Navbar() {
         ☰
       </button>
 
-      <nav className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+      <nav
+      className={`navbar-menu ${menuOpen ? "open" : ""}`}
+      onClick={closeMenu}
+      >
 
         <NavLink to="/" onClick={closeMenu}>
           Dashboard

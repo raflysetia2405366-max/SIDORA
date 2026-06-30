@@ -27,6 +27,34 @@ body{
 }
 
 /* =========================
+   APP LAYOUT
+========================= */
+
+.app{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+
+    flex:1;
+
+    width:100%;
+
+    padding-top:82px;
+
+}
+
+/* =========================
    ELEMENT
 ========================= */
 
@@ -61,12 +89,6 @@ button{
 button:hover{
 
     transform:translateY(-2px);
-
-}
-
-main{
-
-    width:100%;
 
 }
 
@@ -124,6 +146,12 @@ width:96%;
 
 @media(max-width:768px){
 
+.main-content{
+
+padding-top:88px;
+
+}
+
 body{
 
 font-size:15px;
@@ -153,6 +181,12 @@ gap:18px;
 ========================= */
 
 @media(max-width:480px){
+
+.main-content{
+
+padding-top:86px;
+
+}
 
 body{
 
