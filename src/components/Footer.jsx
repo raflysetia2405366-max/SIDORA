@@ -6,7 +6,7 @@ function Footer() {
 
       <div className="footer-left">
 
-        <h2>SIDORA</h2>
+        <h2>🌍 SIDORA</h2>
 
         <p>
           Sistem Informasi Desa Donowarih
@@ -17,14 +17,14 @@ function Footer() {
       <div className="footer-center">
 
         <span>
-          KKN Universitas Negeri Malang 2026
+          Kuliah Kerja Nyata (KKN) Universitas Negeri Malang
         </span>
 
       </div>
 
       <div className="footer-right">
 
-        © 2026 SIDORA
+        <span>© 2026 SIDORA</span>
 
       </div>
 
