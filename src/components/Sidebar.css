@@ -10,19 +10,13 @@
 
     color:white;
 
-    width:100%;
-
     position:sticky;
 
     top:95px;
 
-    transition:.3s;
-
 }
 
-/* ================= */
-
-.sidebar-top{
+.sidebar-header{
 
     display:flex;
 
@@ -30,25 +24,25 @@
 
     gap:15px;
 
-    margin-bottom:20px;
-
 }
 
 .sidebar-toggle{
 
-    width:42px;
+    width:45px;
 
-    height:42px;
+    height:45px;
 
     border:none;
 
-    border-radius:10px;
+    border-radius:12px;
 
     background:#22c55e;
 
     color:white;
 
     font-size:22px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
@@ -62,23 +56,19 @@
 
 }
 
-.sidebar p{
+.sidebar-subtitle{
 
     margin-top:5px;
 
     color:#9ca3af;
 
-    font-size:14px;
-
 }
-
-/* ================= */
 
 .sidebar hr{
 
-    border:1px solid #1f2937;
+    margin:25px 0;
 
-    margin:22px 0;
+    border:1px solid #1f2937;
 
 }
 
@@ -90,9 +80,9 @@
 
 }
 
-/* ================= */
+/* ===== CHECKBOX ===== */
 
-.check{
+.check-item{
 
     display:flex;
 
@@ -100,47 +90,55 @@
 
     gap:12px;
 
-    margin-bottom:15px;
+    margin-bottom:16px;
+
+    width:100%;
 
     cursor:pointer;
 
 }
 
-.check input{
+.check-item input{
 
     width:18px;
 
     height:18px;
 
-}
-
-/* ================= */
-
-.item{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:15px;
+    flex-shrink:0;
 
 }
 
-.item strong{
+.check-item span{
 
-    color:#22c55e;
+    display:block;
+
+    flex:1;
+
+    font-size:16px;
+
+    line-height:1.5;
+
+    word-break:break-word;
 
 }
 
-/* ================= */
+/* ==================== */
+
+.sidebar-note{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
 
 @media(max-width:992px){
 
 .sidebar{
 
-position:relative;
-
-top:0;
+position:static;
 
 }
 
