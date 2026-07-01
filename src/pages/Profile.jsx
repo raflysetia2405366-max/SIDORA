@@ -1,79 +1,242 @@
 import "./Profile.css";
 
+const kepalaDesa = [
+  {
+    nama: "Tirtorejo Parto",
+    tahun: "1918 - 1945",
+  },
+  {
+    nama: "Ismail",
+    tahun: "1945 - 1948",
+  },
+  {
+    nama: "Mandalil",
+    tahun: "1948 - 1950",
+  },
+  {
+    nama: "Munasir Donoharjo",
+    tahun: "1950 - 1968",
+  },
+  {
+    nama: "Salamun Donokaryo",
+    tahun: "1968 - 1976",
+  },
+  {
+    nama: "Iskak Harjo Sumarto",
+    tahun: "1976 - 1979",
+  },
+  {
+    nama: "Ach. Slamet Tirto Raharjo",
+    tahun: "1980 - 1990",
+  },
+  {
+    nama: "Kabul Donosantoso",
+    tahun: "1999 - 2007",
+  },
+  {
+    nama: "Kabul Donosantoso",
+    tahun: "2007 - 2013",
+  },
+  {
+    nama: "Sujoko Donoprasetyo",
+    tahun: "2013 - Sekarang",
+  },
+];
+
 function Profile() {
   return (
     <div className="profile-page">
 
-      <div className="profile-header">
+      {/* ================= HEADER ================= */}
+
+      <section className="profile-header">
 
         <h1>🏡 Profil Desa Donowarih</h1>
 
         <p>
-          Desa Donowarih merupakan salah satu desa di Kecamatan
-          Karangploso, Kabupaten Malang, Provinsi Jawa Timur.
-          Sistem SIDORA dikembangkan sebagai media penyajian
-          informasi desa berbasis WebGIS.
+          Desa Donowarih merupakan salah satu desa yang berada di
+          Kecamatan Karangploso, Kabupaten Malang, Provinsi Jawa Timur.
+          SIDORA (Sistem Informasi Desa Donowarih) dikembangkan sebagai
+          media informasi digital untuk menyajikan informasi desa secara
+          cepat, transparan, serta mudah diakses oleh seluruh masyarakat.
         </p>
 
-      </div>
+      </section>
 
-      <div className="profile-grid">
+      {/* ================= SEJARAH ================= */}
 
-        <Info title="Kecamatan" value="Karangploso" />
-        <Info title="Kabupaten" value="Malang" />
-        <Info title="Provinsi" value="Jawa Timur" />
-        <Info title="Kode Pos" value="65152" />
-        <Info title="Jumlah Dusun" value="4 Dusun" />
-        <Info title="Luas Wilayah" value="1.298 Ha" />
+      <section className="profile-card">
 
-      </div>
+        <h2>📖 Sejarah Desa</h2>
 
-      <Section
-        title="Visi"
-        text="Mewujudkan Desa Donowarih yang maju, mandiri, transparan, serta berbasis teknologi informasi."
-      />
+        <p>
 
-      <div className="profile-card">
+          Pemerintahan Desa Donowarih mulai berdiri sejak
+          <strong> tahun 1918</strong>. Kepala pemerintahan pertama
+          Desa Donowarih adalah
+          <strong> Bapak Tirtorejo Parto</strong> yang menjabat
+          pada periode <strong>1918–1945</strong>.
 
-        <h2>Misi</h2>
+        </p>
 
-        <ul>
+        <p>
 
-          <li>Meningkatkan pelayanan publik.</li>
+          Sejak berdirinya pemerintahan desa,
+          kepemimpinan Desa Donowarih terus mengalami
+          perkembangan dari masa ke masa hingga saat ini
+          sebagai bagian dari upaya meningkatkan pelayanan
+          kepada masyarakat serta mewujudkan tata kelola
+          pemerintahan desa yang semakin baik.
 
-          <li>Mengembangkan sistem informasi desa.</li>
+        </p>
 
-          <li>Meningkatkan kualitas SDM.</li>
+      </section>
 
-          <li>Mengoptimalkan potensi desa.</li>
+      {/* ================= TIMELINE ================= */}
 
-        </ul>
+      <section className="profile-card">
 
-      </div>
+        <h2>👑 Sejarah Kepala Desa</h2>
 
-    </div>
-  );
-}
+        <div className="timeline">
 
-function Info({ title, value }) {
-  return (
-    <div className="info-card">
+          {kepalaDesa.map((item, index) => (
 
-      <span>{title}</span>
+            <div
+              className="timeline-item"
+              key={index}
+            >
 
-      <strong>{value}</strong>
+              <div className="timeline-dot"></div>
 
-    </div>
-  );
-}
+              <div className="timeline-content">
 
-function Section({ title, text }) {
-  return (
-    <div className="profile-card">
+                <span className="timeline-year">
+                  {item.tahun}
+                </span>
 
-      <h2>{title}</h2>
+                <h3>
+                  {item.nama}
+                </h3>
 
-      <p>{text}</p>
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* ================= VISI ================= */}
+
+      <section className="profile-card">
+
+        <h2>🎯 Visi Desa</h2>
+
+        <div className="vision-box">
+
+          <h3>
+
+            Terwujudnya masyarakat
+
+            <br />
+
+            Agamis, Demokratis, Mandiri,
+            Sehat, Harmonis,
+            Tertib dan Indah
+
+          </h3>
+
+          <span>
+
+            (ADEM SEHATI)
+
+          </span>
+
+        </div>
+
+      </section>
+
+      {/* ================= MISI ================= */}
+
+      <section className="profile-card">
+
+        <h2>📌 Misi Desa</h2>
+
+        <ol className="mission-list">
+
+          <li>
+            Melaksanakan pembinaan keagamaan
+            melalui kelompok-kelompok yang ada di desa.
+          </li>
+
+          <li>
+            Melaksanakan musyawarah desa dalam
+            penyusunan perencanaan, pelaksanaan,
+            dan pelaporan segala kegiatan.
+          </li>
+
+          <li>
+            Menjalankan kebijakan pemerintahan,
+            pembangunan dan pemberdayaan masyarakat
+            sesuai peraturan perundang-undangan
+            yang berlaku.
+          </li>
+
+          <li>
+            Melaksanakan pembinaan kemasyarakatan
+            melalui bimbingan dan pelatihan kepada
+            kelompok masyarakat menuju kemandirian
+            usaha dan organisasi.
+          </li>
+
+          <li>
+            Penyediaan sarana prasarana pertanian,
+            peternakan, perdagangan,
+            usaha mikro dan pendukung
+            usaha ekonomi produktif.
+          </li>
+
+          <li>
+            Melaksanakan pembinaan kader kesehatan
+            dan memfasilitasi pelayanan
+            kesehatan masyarakat.
+          </li>
+
+          <li>
+            Melaksanakan pembinaan kerukunan umat
+            beragama, aliran kepercayaan,
+            adat istiadat yang berkembang
+            di masyarakat.
+          </li>
+
+        </ol>
+
+      </section>
+
+      {/* ================= MOTTO ================= */}
+
+      <section className="profile-card">
+
+        <h2>🌿 Moto Desa</h2>
+
+        <div className="motto-box">
+
+          <h3>ADEM SEHATI</h3>
+
+          <p>
+
+            Agamis • Demokratis • Mandiri •
+            Sehat • Harmonis •
+            Tertib • Indah
+
+          </p>
+
+        </div>
+
+      </section>
 
     </div>
   );
