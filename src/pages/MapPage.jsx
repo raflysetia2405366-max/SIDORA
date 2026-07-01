@@ -15,34 +15,36 @@ function MapPage() {
       </div>
 
       {/* Layout */}
-      <div className="map-layout">
+      <div
+        className={`map-layout ${
+          showSidebar ? "sidebar-open" : "sidebar-close"
+        }`}
+      >
 
-        {showSidebar && (
-          <div className="sidebar-container">
-            <Sidebar
-              onClose={() => setShowSidebar(false)}
-            />
-          </div>
-        )}
+        {/* Sidebar */}
+        <aside className="sidebar-container">
 
-        <div
-          className={`map-container ${
-            showSidebar ? "" : "full"
-          }`}
-        >
+          <Sidebar
+            onClose={() => setShowSidebar(false)}
+          />
+
+        </aside>
+
+        {/* Map */}
+        <section className="map-container">
 
           {!showSidebar && (
             <button
               className="show-sidebar"
               onClick={() => setShowSidebar(true)}
             >
-              ☰ Layer
+              ☰
             </button>
           )}
 
           <MapView />
 
-        </div>
+        </section>
 
       </div>
 

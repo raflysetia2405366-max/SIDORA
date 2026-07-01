@@ -10,15 +10,19 @@
 
     color:white;
 
+    width:100%;
+
     position:sticky;
 
     top:95px;
 
+    transition:.3s;
+
 }
 
-/* ===================== */
+/* ================= */
 
-.sidebar-header{
+.sidebar-top{
 
     display:flex;
 
@@ -26,19 +30,19 @@
 
     gap:15px;
 
-}
+    margin-bottom:20px;
 
-/* ===================== */
+}
 
 .sidebar-toggle{
 
-    width:45px;
+    width:42px;
 
-    height:45px;
+    height:42px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
     background:#22c55e;
 
@@ -46,11 +50,9 @@
 
     font-size:22px;
 
-    font-weight:bold;
+    cursor:pointer;
 
 }
-
-/* ===================== */
 
 .sidebar h2{
 
@@ -60,25 +62,25 @@
 
 }
 
-.sidebar-subtitle{
+.sidebar p{
 
     margin-top:5px;
 
     color:#9ca3af;
 
+    font-size:14px;
+
 }
 
-/* ===================== */
+/* ================= */
 
 .sidebar hr{
 
-    margin:25px 0;
-
     border:1px solid #1f2937;
 
-}
+    margin:22px 0;
 
-/* ===================== */
+}
 
 .sidebar h3{
 
@@ -88,23 +90,31 @@
 
 }
 
-/* ===================== */
+/* ================= */
 
-.check-item{
+.check{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 
     cursor:pointer;
 
 }
 
-/* ===================== */
+.check input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* ================= */
 
 .item{
 
@@ -112,7 +122,7 @@
 
     justify-content:space-between;
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 
 }
 
@@ -122,25 +132,15 @@
 
 }
 
-/* ===================== */
-
-.sidebar-note{
-
-    color:#9ca3af;
-
-    font-size:14px;
-
-    line-height:1.7;
-
-}
-
-/* ===================== */
+/* ================= */
 
 @media(max-width:992px){
 
 .sidebar{
 
-position:static;
+position:relative;
+
+top:0;
 
 }
 
