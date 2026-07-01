@@ -13,31 +13,29 @@ html{
 }
 
 body{
-
     font-family:Inter,"Segoe UI",sans-serif;
-
     background:#071019;
-
     color:white;
-
-    overflow-x:hidden;
-
     line-height:1.6;
-
+    overflow-x:hidden;
 }
 
 /* =========================
-   APP LAYOUT
+   ROOT
+========================= */
+
+#root{
+    min-height:100vh;
+}
+
+/* =========================
+   APP
 ========================= */
 
 .app{
-
     min-height:100vh;
-
     display:flex;
-
     flex-direction:column;
-
 }
 
 /* =========================
@@ -45,13 +43,9 @@ body{
 ========================= */
 
 .main-content{
-
     flex:1;
-
     width:100%;
-
     padding-top:82px;
-
 }
 
 /* =========================
@@ -59,37 +53,24 @@ body{
 ========================= */
 
 a{
-
     text-decoration:none;
-
     color:inherit;
-
-}
-
-img{
-
-    display:block;
-
-    width:100%;
-
-    max-width:100%;
-
 }
 
 button{
-
     cursor:pointer;
-
-    transition:.3s;
-
     font-family:inherit;
-
+    transition:.25s;
 }
 
 button:hover{
-
     transform:translateY(-2px);
+}
 
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
 }
 
 /* =========================
@@ -97,45 +78,22 @@ button:hover{
 ========================= */
 
 .container{
-
     width:min(1400px,95%);
-
     margin:auto;
-
-}
-
-/* =========================
-   MAP LAYOUT
-========================= */
-
-.map-layout{
-
-    display:grid;
-
-    grid-template-columns:320px 1fr;
-
-    gap:24px;
-
-    align-items:start;
-
 }
 
 /* =========================
    TABLET
 ========================= */
 
-@media(max-width:992px){
+@media (max-width:992px){
 
-.map-layout{
-
-grid-template-columns:1fr;
-
+.main-content{
+    padding-top:82px;
 }
 
 .container{
-
-width:96%;
-
+    width:96%;
 }
 
 }
@@ -144,34 +102,18 @@ width:96%;
    MOBILE
 ========================= */
 
-@media(max-width:768px){
-
-.main-content{
-
-padding-top:88px;
-
-}
+@media (max-width:768px){
 
 body{
+    font-size:15px;
+}
 
-font-size:15px;
-
+.main-content{
+    padding-top:90px;
 }
 
 .container{
-
-width:95%;
-
-}
-
-.map-layout{
-
-display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
+    width:95%;
 }
 
 }
@@ -180,24 +122,18 @@ gap:18px;
    SMALL MOBILE
 ========================= */
 
-@media(max-width:480px){
-
-.main-content{
-
-padding-top:86px;
-
-}
+@media (max-width:480px){
 
 body{
+    font-size:14px;
+}
 
-font-size:14px;
-
+.main-content{
+    padding-top:86px;
 }
 
 .container{
-
-width:94%;
-
+    width:94%;
 }
 
 }
