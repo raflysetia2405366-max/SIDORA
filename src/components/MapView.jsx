@@ -36,7 +36,7 @@ function MapView() {
         mapContainerClassName="google-map"
         center={center}
         zoom={15}
-        mapTypeId="satellite"
+        mapTypeId="hybrid"
         options={{
           fullscreenControl: true,
           streetViewControl: false,
