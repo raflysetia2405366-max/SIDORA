@@ -1,43 +1,81 @@
 .map-wrapper{
+
     width:100%;
+
     height:75vh;
-    border-radius:20px;
+
+    border-radius:18px;
+
     overflow:hidden;
+
     border:1px solid #1f2937;
+
     background:#111827;
-    box-shadow:0 0 25px rgba(0,0,0,.25);
+
+    position:relative;
+
 }
 
 .google-map{
+
     width:100%;
+
     height:100%;
+
+}
+
+.loading-map{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:18px;
+
 }
 
 /* Tablet */
-@media (max-width:992px){
+
+@media(max-width:992px){
 
 .map-wrapper{
-    height:65vh;
+
+height:65vh;
+
 }
 
 }
 
 /* HP */
-@media (max-width:768px){
+
+@media(max-width:768px){
 
 .map-wrapper{
-    height:60vh;
-    border-radius:16px;
+
+height:60vh;
+
+border-radius:15px;
+
 }
 
 }
 
 /* HP kecil */
-@media (max-width:480px){
+
+@media(max-width:480px){
 
 .map-wrapper{
-    height:55vh;
-    border-radius:14px;
+
+height:55vh;
+
 }
 
 }

@@ -1,14 +1,26 @@
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ onClose }) {
   return (
     <aside className="sidebar">
 
-      <h2>SIDORA</h2>
+      <div className="sidebar-header">
 
-      <p className="sidebar-subtitle">
-        Layer WebGIS
-      </p>
+        <button
+          className="sidebar-toggle"
+          onClick={onClose}
+        >
+          ☰
+        </button>
+
+        <div>
+          <h2>SIDORA</h2>
+          <p className="sidebar-subtitle">
+            Layer WebGIS
+          </p>
+        </div>
+
+      </div>
 
       <hr />
 
@@ -32,8 +44,8 @@ function Sidebar() {
       <hr />
 
       <p className="sidebar-note">
-        Layer hasil digitasi QGIS akan
-        muncul setelah proses integrasi selesai.
+        Layer hasil digitasi QGIS akan muncul
+        setelah proses integrasi selesai.
       </p>
 
     </aside>
@@ -47,7 +59,7 @@ function Check({ text, checked }) {
         type="checkbox"
         defaultChecked={checked}
       />
-      {text}
+      <span>{text}</span>
     </label>
   );
 }
@@ -55,11 +67,8 @@ function Check({ text, checked }) {
 function Item({ title, value }) {
   return (
     <div className="item">
-
       <span>{title}</span>
-
       <strong>{value}</strong>
-
     </div>
   );
 }

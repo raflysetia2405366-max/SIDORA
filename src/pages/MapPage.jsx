@@ -9,26 +9,36 @@ function MapPage() {
   return (
     <div className="map-page">
 
-      <h1 className="page-title">
-        🗺 Peta Interaktif Desa Donowarih
-      </h1>
+      {/* Header */}
+      <div className="page-header">
+        <h1>🗺 Peta Interaktif Desa Donowarih</h1>
+      </div>
 
+      {/* Layout */}
       <div className="map-layout">
 
         {showSidebar && (
-          <div className="sidebar-wrapper">
-            <Sidebar />
+          <div className="sidebar-container">
+            <Sidebar
+              onClose={() => setShowSidebar(false)}
+            />
           </div>
         )}
 
-        <div className="map-content">
+        <div
+          className={`map-container ${
+            showSidebar ? "" : "full"
+          }`}
+        >
 
-          <button
-            className="floating-layer-btn"
-            onClick={() => setShowSidebar(!showSidebar)}
-          >
-            {showSidebar ? "☰" : "☰"}
-          </button>
+          {!showSidebar && (
+            <button
+              className="show-sidebar"
+              onClick={() => setShowSidebar(true)}
+            >
+              ☰ Layer
+            </button>
+          )}
 
           <MapView />
 
