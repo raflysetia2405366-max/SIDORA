@@ -9,27 +9,29 @@ function MapPage() {
   return (
     <div className="map-page">
 
-      <div className="map-header">
-
-        <div>
-          <h1>🗺 Peta Interaktif Desa Donowarih</h1>
-        </div>
-
-        <button
-          className="toggle-sidebar"
-          onClick={() => setShowSidebar(!showSidebar)}
-        >
-          {showSidebar ? "☰ Sembunyikan Layer" : "☰ Tampilkan Layer"}
-        </button>
-
-      </div>
+      <h1 className="page-title">
+        🗺 Peta Interaktif Desa Donowarih
+      </h1>
 
       <div className="map-layout">
 
-        {showSidebar && <Sidebar />}
+        {showSidebar && (
+          <div className="sidebar-wrapper">
+            <Sidebar />
+          </div>
+        )}
 
         <div className="map-content">
+
+          <button
+            className="floating-layer-btn"
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
+            {showSidebar ? "☰" : "☰"}
+          </button>
+
           <MapView />
+
         </div>
 
       </div>
