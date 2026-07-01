@@ -4,7 +4,7 @@ function Sidebar({ onClose }) {
   return (
     <aside className="sidebar">
 
-      <div className="sidebar-top">
+      <div className="sidebar-header">
 
         <button
           className="sidebar-toggle"
@@ -14,11 +14,10 @@ function Sidebar({ onClose }) {
         </button>
 
         <div>
-
           <h2>SIDORA</h2>
-
-          <p>Layer WebGIS</p>
-
+          <p className="sidebar-subtitle">
+            Layer WebGIS
+          </p>
         </div>
 
       </div>
@@ -28,19 +27,16 @@ function Sidebar({ onClose }) {
       <h3>📂 Layer Peta</h3>
 
       <Check text="Batas Desa" checked />
-      <Check text="Dusun" checked />
-      <Check text="Jalan" />
-      <Check text="Sungai" />
-      <Check text="Fasilitas Umum" />
+      <Check text="Dusun Karangan" checked />
+      <Check text="Dusun Karangjuwet" checked />
+      <Check text="Dusun Jaraan" checked />
+      <Check text="Dusun Borogragal" checked />
 
       <hr />
 
-      <h3>📊 Statistik</h3>
-
-      <Item title="Dusun" value="4" />
-      <Item title="RT" value="52" />
-      <Item title="RW" value="12" />
-      <Item title="Luas" value="1298 Ha" />
+      <p className="sidebar-note">
+        Centang atau hilangkan layer untuk mengatur tampilan peta.
+      </p>
 
     </aside>
   );
@@ -48,28 +44,13 @@ function Sidebar({ onClose }) {
 
 function Check({ text, checked }) {
   return (
-    <label className="check">
-
+    <label className="check-item">
       <input
         type="checkbox"
         defaultChecked={checked}
       />
-
       <span>{text}</span>
-
     </label>
-  );
-}
-
-function Item({ title, value }) {
-  return (
-    <div className="item">
-
-      <span>{title}</span>
-
-      <strong>{value}</strong>
-
-    </div>
   );
 }
 
