@@ -1,47 +1,35 @@
-import "./MapPage.css";
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import MapView from "../components/MapView";
+import "./MapPage.css";
 
 function MapPage() {
+  const [showSidebar, setShowSidebar] = useState(true);
+
   return (
     <div className="map-page">
 
+      <div className="map-header">
+
+        <div>
+          <h1>🗺 Peta Interaktif Desa Donowarih</h1>
+        </div>
+
+        <button
+          className="toggle-sidebar"
+          onClick={() => setShowSidebar(!showSidebar)}
+        >
+          {showSidebar ? "☰ Sembunyikan Layer" : "☰ Tampilkan Layer"}
+        </button>
+
+      </div>
+
       <div className="map-layout">
 
-        <Sidebar />
+        {showSidebar && <Sidebar />}
 
         <div className="map-content">
-
-          <div className="map-header">
-
-            <h1>
-              🗺 Peta Interaktif Desa Donowarih
-            </h1>
-
-            <p>
-              Sistem Informasi Geografis Desa Donowarih berbasis WebGIS.
-              Nantinya seluruh informasi spasial seperti batas desa,
-              batas dusun, jalan, sungai dan fasilitas umum
-              akan ditampilkan secara interaktif.
-            </p>
-
-          </div>
-
           <MapView />
-
-          <div className="map-info">
-
-            <h2>Informasi</h2>
-
-            <p>
-              Saat ini peta masih menggunakan basemap.
-              Setelah proses digitasi selesai,
-              seluruh layer hasil QGIS akan ditampilkan
-              langsung pada halaman ini.
-            </p>
-
-          </div>
-
         </div>
 
       </div>
