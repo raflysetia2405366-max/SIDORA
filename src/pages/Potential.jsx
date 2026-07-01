@@ -1,68 +1,57 @@
 import "./Potential.css";
 
 function Potential() {
-
   const data = [
-
     {
-      icon:"🌾",
-      title:"Pertanian",
-      desc:"Pengembangan tanaman pangan, hortikultura, dan perkebunan sebagai sektor utama masyarakat.",
+      icon: "🌳",
+      title: "TAMAN AGM (Arjuno Gunung Mujur)",
+      desc: "Kawasan wisata alam yang menawarkan suasana pegunungan yang sejuk, area rekreasi keluarga, serta panorama alam khas Desa Donowarih.",
     },
 
     {
-      icon:"🐄",
-      title:"Peternakan",
-      desc:"Potensi peternakan sapi, kambing, dan unggas yang menjadi mata pencaharian warga.",
+      icon: "🍊",
+      title: "Wisata Petik Jeruk",
+      desc: "Agrowisata yang memberikan pengalaman memetik jeruk langsung dari kebun dengan pemandangan alam yang asri.",
     },
 
     {
-      icon:"🏞️",
-      title:"Pariwisata",
-      desc:"Wisata alam, perbukitan, dan potensi agrowisata yang dapat dikembangkan.",
+      icon: "🚗",
+      title: "Rest Area Karangploso",
+      desc: "Kawasan persinggahan wisata yang menyediakan kuliner, produk UMKM lokal, serta menjadi titik istirahat bagi wisatawan.",
     },
 
     {
-      icon:"🏪",
-      title:"UMKM",
-      desc:"Produk olahan pangan, kerajinan, dan usaha kecil masyarakat Desa Donowarih.",
+      icon: "🕌",
+      title: "Wisata Religi Gunung Mujur",
+      desc: "Destinasi wisata religi yang menjadi tempat ziarah sekaligus menawarkan panorama alam pegunungan yang menenangkan.",
     },
 
     {
-      icon:"🎓",
-      title:"Pendidikan",
-      desc:"Fasilitas pendidikan yang mendukung peningkatan kualitas sumber daya manusia.",
+      icon: "🌄",
+      title: "Wisata Lereng Kebun (WLK)",
+      desc: "Objek wisata dengan panorama perbukitan, area swafoto, dan suasana pedesaan yang cocok untuk rekreasi keluarga.",
     },
-
-    {
-      icon:"🕌",
-      title:"Sarana Umum",
-      desc:"Fasilitas ibadah, kesehatan, olahraga, dan pelayanan masyarakat.",
-    }
-
   ];
 
   return (
-
     <div className="potential-page">
 
       <div className="potential-header">
 
-        <h1>🌱 Potensi Desa Donowarih</h1>
+        <h1>🌿 Potensi Wisata Desa Donowarih</h1>
 
         <p>
-
-          Desa Donowarih memiliki berbagai potensi yang dapat
-          dikembangkan untuk meningkatkan kesejahteraan masyarakat
-          dan mendukung pembangunan desa berbasis teknologi.
-
+          Desa Donowarih memiliki berbagai destinasi wisata yang
+          memadukan keindahan alam, wisata religi, agrowisata,
+          serta kawasan rekreasi yang menjadi daya tarik bagi
+          masyarakat maupun wisatawan.
         </p>
 
       </div>
 
       <div className="potential-grid">
 
-        {data.map((item,index)=>(
+        {data.map((item, index) => (
 
           <div
             className="potential-card"
@@ -70,22 +59,12 @@ function Potential() {
           >
 
             <div className="potential-icon">
-
               {item.icon}
-
             </div>
 
-            <h2>
+            <h2>{item.title}</h2>
 
-              {item.title}
-
-            </h2>
-
-            <p>
-
-              {item.desc}
-
-            </p>
+            <p>{item.desc}</p>
 
           </div>
 
@@ -94,9 +73,7 @@ function Potential() {
       </div>
 
     </div>
-
   );
-
 }
 
 export default Potential;
