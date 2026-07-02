@@ -17,7 +17,7 @@ function Footer() {
       <div className="footer-center">
 
         <span>
-          Kuliah Kerja Nyata (KKN) Universitas Negeri Malang
+          Universitas Negeri Malang Belajar Bersama Masyarakat (UMBBM)
         </span>
 
       </div>
