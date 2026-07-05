@@ -7,7 +7,7 @@ function Service() {
     {
       title: "Website Resmi Desa",
       icon: "🌐",
-      desc: "Akses website resmi Pemerintah Desa Donowarih untuk memperoleh informasi desa, berita terbaru, layanan administrasi, dan berbagai informasi resmi lainnya.",
+      desc: "Kunjungi website resmi Pemerintah Desa Donowarih untuk memperoleh informasi, berita, pengumuman, serta layanan administrasi desa secara daring.",
       button: "Kunjungi Website",
       link: "https://donowarih-malangkab.desa.id/",
     },
@@ -15,18 +15,17 @@ function Service() {
     {
       title: "Instagram Desa",
       icon: "📸",
-      desc: "Ikuti akun Instagram resmi Desa Donowarih untuk mendapatkan informasi kegiatan desa, dokumentasi acara, pengumuman, dan berita terbaru.",
+      desc: "Ikuti akun Instagram resmi Desa Donowarih untuk melihat informasi kegiatan desa, dokumentasi acara, serta pengumuman terbaru.",
       button: "Buka Instagram",
       link: "https://www.instagram.com/desa_donowarih?igsh=cjhnNWRxbjR0b3Fk",
     },
 
     {
-      title: "Kontak Desa",
-      icon: "📧",
-      desc:
-        "Email : donowarih.karangploso@malangkab.go.id\n\nTelepon : +62 812-3053-2606",
-      button: "Kirim Email",
-      link: "mailto:donowarih.karangploso@malangkab.go.id",
+      title: "Kontak Pemerintah Desa",
+      icon: "☎️",
+      desc: "Hubungi Pemerintah Desa Donowarih melalui email resmi atau nomor telepon yang tersedia apabila membutuhkan informasi lebih lanjut.",
+      button: "Hubungi Desa",
+      link: "mailto:donowarih123@gmail.com",
     },
 
   ];
@@ -37,14 +36,14 @@ function Service() {
 
       <div className="service-header">
 
-        <h1>📑 Pelayanan Desa</h1>
+        <h1>Pelayanan Desa</h1>
 
         <p>
 
           Halaman ini menyediakan akses menuju layanan resmi Pemerintah
-          Desa Donowarih. SIDORA berfungsi sebagai media informasi,
-          sedangkan pelayanan administrasi dilakukan melalui kanal
-          resmi Pemerintah Desa Donowarih.
+          Desa Donowarih. SIDORA berfungsi sebagai media informasi
+          digital, sedangkan pelayanan administrasi dilakukan melalui
+          kanal resmi Pemerintah Desa.
 
         </p>
 
@@ -52,7 +51,7 @@ function Service() {
 
       <div className="service-grid">
 
-        {services.map((item, index) => (
+        {services.map((item,index)=>(
 
           <div
             className="service-card"
@@ -71,9 +70,7 @@ function Service() {
 
             </h2>
 
-            <p
-              style={{ whiteSpace: "pre-line" }}
-            >
+            <p>
 
               {item.desc}
 
@@ -96,6 +93,43 @@ function Service() {
           </div>
 
         ))}
+
+      </div>
+
+      <div className="contact-box">
+
+        <h2>Informasi Kontak</h2>
+
+        <div className="contact-grid">
+
+          <div>
+
+            <span>Email</span>
+
+            <strong>donowarih123@gmail.com</strong>
+
+          </div>
+
+          <div>
+
+            <span>Telepon</span>
+
+            <strong>(0341) 464-624</strong>
+
+          </div>
+
+          <div>
+
+            <span>Alamat</span>
+
+            <strong>
+              Desa Donowarih, Kecamatan Karangploso,
+              Kabupaten Malang
+            </strong>
+
+          </div>
+
+        </div>
 
       </div>
 
