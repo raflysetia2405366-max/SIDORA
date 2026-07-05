@@ -1,39 +1,68 @@
+import { useState } from "react";
 import "./Potential.css";
 
+import agm1 from "../assets/agm1.jpeg";
+import agm2 from "../assets/agm2.jpeg";
+import agm3 from "../assets/agm3.jpeg";
+
+import religi1 from "../assets/religi1.jpeg";
+import religi2 from "../assets/religi2.jpeg";
+
 function Potential() {
-  const data = [
+
+  const [selected, setSelected] = useState(null);
+
+  const wisata = [
+
     {
-      icon: "🌳",
-      title: "TAMAN AGM (Arjuno Gunung Mujur)",
-      desc: "Kawasan wisata alam yang menawarkan suasana pegunungan yang sejuk, area rekreasi keluarga, serta panorama alam khas Desa Donowarih.",
+      title: "Taman AGM (Arjuno Gunung Mujur)",
+      image: agm1,
+      gallery: [agm1, agm2, agm3],
+      location: "Dusun Karangan",
+      desc:
+        "Kawasan wisata alam dengan panorama pegunungan, hutan pinus, dan udara yang sejuk. Menjadi salah satu destinasi unggulan Desa Donowarih.",
     },
 
     {
-      icon: "🍊",
-      title: "Wisata Petik Jeruk",
-      desc: "Agrowisata yang memberikan pengalaman memetik jeruk langsung dari kebun dengan pemandangan alam yang asri.",
-    },
-
-    {
-      icon: "🚗",
-      title: "Rest Area Karangploso",
-      desc: "Kawasan persinggahan wisata yang menyediakan kuliner, produk UMKM lokal, serta menjadi titik istirahat bagi wisatawan.",
-    },
-
-    {
-      icon: "🕌",
       title: "Wisata Religi Gunung Mujur",
-      desc: "Destinasi wisata religi yang menjadi tempat ziarah sekaligus menawarkan panorama alam pegunungan yang menenangkan.",
+      image: religi1,
+      gallery: [religi1, religi2],
+      location: "Gunung Mujur",
+      desc:
+        "Destinasi wisata religi yang menjadi tujuan ziarah masyarakat. Berada di kawasan Gunung Mujur dengan suasana yang tenang dan asri.",
     },
 
     {
-      icon: "🌄",
-      title: "Wisata Lereng Kebun (WLK)",
-      desc: "Objek wisata dengan panorama perbukitan, area swafoto, dan suasana pedesaan yang cocok untuk rekreasi keluarga.",
+      title: "Wisata Petik Jeruk",
+      image: null,
+      gallery: [],
+      location: "Desa Donowarih",
+      desc:
+        "Wisata edukasi pertanian dimana pengunjung dapat menikmati pengalaman memetik jeruk langsung dari kebun masyarakat.",
     },
+
+    {
+      title: "Wisata Lereng Kebun (WLK)",
+      image: null,
+      gallery: [],
+      location: "Desa Donowarih",
+      desc:
+        "Kawasan wisata alam yang menawarkan pemandangan perbukitan serta udara pegunungan yang sejuk.",
+    },
+
+    {
+      title: "Rest Area Karangploso",
+      image: null,
+      gallery: [],
+      location: "Perbatasan Donowarih",
+      desc:
+        "Tempat persinggahan sekaligus pusat kuliner dan UMKM yang menjadi pintu masuk menuju kawasan wisata Desa Donowarih.",
+    },
+
   ];
 
   return (
+
     <div className="potential-page">
 
       <div className="potential-header">
@@ -41,30 +70,65 @@ function Potential() {
         <h1>🌿 Potensi Wisata Desa Donowarih</h1>
 
         <p>
-          Desa Donowarih memiliki berbagai destinasi wisata yang
-          memadukan keindahan alam, wisata religi, agrowisata,
-          serta kawasan rekreasi yang menjadi daya tarik bagi
-          masyarakat maupun wisatawan.
+          Desa Donowarih memiliki berbagai destinasi wisata alam,
+          wisata religi, dan wisata edukasi yang menjadi daya tarik
+          bagi masyarakat maupun wisatawan.
         </p>
 
       </div>
 
       <div className="potential-grid">
 
-        {data.map((item, index) => (
+        {wisata.map((item, index) => (
 
           <div
-            className="potential-card"
+            className="destination-card"
             key={index}
           >
 
-            <div className="potential-icon">
-              {item.icon}
+            {item.image ? (
+
+              <img
+                src={item.image}
+                alt={item.title}
+                className="destination-image"
+              />
+
+            ) : (
+
+              <div className="coming-soon">
+
+                <span>📸</span>
+
+                <h3>Foto Segera Hadir</h3>
+
+              </div>
+
+            )}
+
+            <div className="destination-content">
+
+              <h2>{item.title}</h2>
+
+              <p className="location">
+
+                📍 {item.location}
+
+              </p>
+
+              <p>
+
+                {item.desc}
+
+              </p>
+
+              <button
+                onClick={() => setSelected(item)}
+              >
+                Lihat Detail
+              </button>
+
             </div>
-
-            <h2>{item.title}</h2>
-
-            <p>{item.desc}</p>
 
           </div>
 
@@ -72,8 +136,69 @@ function Potential() {
 
       </div>
 
+      {/* ================= POPUP ================= */}
+
+      {selected && (
+
+        <div
+          className="modal-overlay"
+          onClick={() => setSelected(null)}
+        >
+
+          <div
+            className="modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+
+            <button
+              className="close"
+              onClick={() => setSelected(null)}
+            >
+              ✕
+            </button>
+
+            {selected.gallery.length > 0 ? (
+
+              <img
+                src={selected.gallery[0]}
+                alt={selected.title}
+                className="modal-image"
+              />
+
+            ) : (
+
+              <div className="coming-large">
+
+                📸 Foto Akan Ditambahkan
+
+              </div>
+
+            )}
+
+            <h2>{selected.title}</h2>
+
+            <p>
+
+              <strong>Lokasi :</strong> {selected.location}
+
+            </p>
+
+            <p>
+
+              {selected.desc}
+
+            </p>
+
+          </div>
+
+        </div>
+
+      )}
+
     </div>
+
   );
+
 }
 
 export default Potential;

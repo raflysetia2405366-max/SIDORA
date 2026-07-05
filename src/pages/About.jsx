@@ -87,7 +87,7 @@ function About() {
 
             <tr>
               <td>Program</td>
-              <td>KKN Reguler 2026</td>
+              <td>UMBBMM Reguler 2026</td>
             </tr>
 
             <tr>
