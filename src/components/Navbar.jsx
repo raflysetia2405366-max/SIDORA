@@ -2,33 +2,45 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+import logo from "../assets/logo-sidora.png";
+
 function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
+
     <header className="navbar">
 
-      <div className="navbar-left">
-        <div className="logo-circle">🌍</div>
+      <div className="navbar-brand">
 
-        <div className="logo-text">
+        <img
+          src={logo}
+          alt="SIDORA"
+          className="navbar-logo"
+        />
+
+        <div className="brand-text">
+
           <h1>SIDORA</h1>
+
           <span>Sistem Informasi Desa Donowarih</span>
+
         </div>
+
       </div>
 
       <button
-        className="menu-toggle"
+        className="menu-button"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         ☰
       </button>
 
       <nav
-      className={`navbar-menu ${menuOpen ? "open" : ""}`}
-      onClick={closeMenu}
+        className={`navbar-menu ${menuOpen ? "active" : ""}`}
       >
 
         <NavLink to="/" onClick={closeMenu}>
@@ -40,30 +52,27 @@ function Navbar() {
         </NavLink>
 
         <NavLink to="/profile" onClick={closeMenu}>
-          Profil Desa
+          Profil
         </NavLink>
 
-        <NavLink to="/potensi" onClick={closeMenu}>
+        <NavLink to="/potential" onClick={closeMenu}>
           Potensi
         </NavLink>
 
-        <NavLink to="/pelayanan" onClick={closeMenu}>
+        <NavLink to="/service" onClick={closeMenu}>
           Pelayanan
         </NavLink>
 
-        <NavLink to="/tentang" onClick={closeMenu}>
+        <NavLink to="/about" onClick={closeMenu}>
           Tentang
         </NavLink>
 
       </nav>
 
-      <div className="navbar-right">
-        <div className="online-dot"></div>
-        <span>Online</span>
-      </div>
-
     </header>
+
   );
+
 }
 
 export default Navbar;

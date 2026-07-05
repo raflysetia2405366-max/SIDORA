@@ -62,17 +62,19 @@
 
     margin-bottom:25px;
 
-    transition:.3s;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
 
 }
 
+/* Hover dihilangkan */
+
 .profile-card:hover{
 
-    border-color:#22c55e;
+    border-color:#1f2937;
 
-    transform:translateY(-4px);
+    transform:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
 
 }
 
@@ -142,9 +144,9 @@
 
     border:4px solid #071019;
 
-    box-shadow:0 0 0 4px #22c55e33;
-
 }
+
+/* Card timeline */
 
 .timeline-content{
 
@@ -158,9 +160,11 @@
 
 }
 
+/* Tidak ada efek hover */
+
 .timeline-content:hover{
 
-    border-color:#22c55e;
+    border-color:#1f2937;
 
 }
 

@@ -1,4 +1,5 @@
 import "./About.css";
+import logo from "../assets/logo-sidora.png";
 
 function About() {
   return (
@@ -8,18 +9,24 @@ function About() {
 
       <div className="hero-card">
 
+        <img
+          src={logo}
+          alt="Logo SIDORA"
+          className="about-logo"
+        />
+
         <h1>SIDORA</h1>
 
         <h3>Sistem Informasi Desa Donowarih</h3>
 
         <p>
-          SIDORA merupakan Sistem Informasi Desa berbasis WebGIS
-          yang dikembangkan sebagai media digital untuk membantu
-          Pemerintah Desa Donowarih dalam menyajikan informasi desa
-          secara interaktif, akurat, dan mudah diakses oleh masyarakat.
-          Melalui SIDORA, masyarakat dapat memperoleh informasi mengenai
-          profil desa, batas wilayah, potensi desa, hingga pelayanan
-          pemerintahan dalam satu platform digital.
+          SIDORA merupakan Sistem Informasi Desa berbasis WebGIS yang
+          dikembangkan sebagai media digital untuk membantu Pemerintah
+          Desa Donowarih dalam menyajikan informasi desa secara
+          interaktif, akurat, dan mudah diakses oleh masyarakat.
+          Melalui SIDORA, masyarakat dapat memperoleh informasi
+          mengenai profil desa, batas wilayah, potensi desa,
+          hingga pelayanan pemerintahan dalam satu platform digital.
         </p>
 
       </div>
@@ -36,7 +43,7 @@ function About() {
 
             <li>Menyediakan informasi desa secara digital.</li>
 
-            <li>Menampilkan peta interaktif berbasis WebGIS.</li>
+            <li>Menyajikan peta interaktif berbasis WebGIS.</li>
 
             <li>Mempermudah masyarakat memperoleh informasi desa.</li>
 
@@ -102,7 +109,12 @@ function About() {
 
             <tr>
               <td>Nama Sistem</td>
-              <td>SIDORA</td>
+              <td>SIDORA (Sistem Informasi Desa Donowarih)</td>
+            </tr>
+
+            <tr>
+              <td>Teknologi</td>
+              <td>React • Vite • Google Maps • WebGIS</td>
             </tr>
 
           </tbody>

@@ -62,6 +62,7 @@
     padding:14px 30px;
     font-size:16px;
     font-weight:600;
+    transition:.25s;
 }
 
 .hero button:hover{
@@ -83,12 +84,19 @@
     border-radius:18px;
     padding:26px;
     text-align:center;
-    transition:.25s;
+    transition:.2s;
 }
 
+/* DIHAPUS EFEK HIJAUNYA */
+
 .stat-card:hover{
-    transform:translateY(-5px);
-    border-color:#22c55e;
+
+    transform:none;
+
+    border-color:#1f2937;
+
+    box-shadow:none;
+
 }
 
 .stat-card h2{
@@ -135,6 +143,13 @@
     border-radius:10px;
     padding:12px 22px;
     font-weight:600;
+    transition:.25s;
+}
+
+.section-title button:hover{
+
+    background:#16a34a;
+
 }
 
 .preview-map{
@@ -145,7 +160,6 @@
 
 .preview-map img{
     width:100%;
-    height:auto;
     display:block;
 }
 
@@ -154,7 +168,7 @@
 @media(max-width:992px){
 
 .statistics{
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 }
 
 }
@@ -164,45 +178,45 @@
 @media(max-width:768px){
 
 .dashboard{
-    padding:16px;
+padding:16px;
 }
 
 .hero{
-    padding:24px;
+padding:24px;
 }
 
 .hero-tag{
-    font-size:11px;
+font-size:11px;
 }
 
 .hero h1{
-    font-size:40px;
+font-size:40px;
 }
 
 .hero h3{
-    font-size:20px;
+font-size:20px;
 }
 
 .hero button{
-    width:100%;
+width:100%;
 }
 
 .statistics{
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
 }
 
 .stat-card{
-    padding:18px;
+padding:18px;
 }
 
 .section-title{
-    flex-direction:column;
-    align-items:flex-start;
+flex-direction:column;
+align-items:flex-start;
 }
 
 .section-title button{
-    width:100%;
+width:100%;
 }
 
 }
@@ -212,39 +226,31 @@
 @media(max-width:480px){
 
 .dashboard{
-    padding:12px;
+padding:12px;
 }
 
 .hero{
-    padding:20px;
+padding:20px;
 }
 
 .hero h1{
-    font-size:34px;
+font-size:34px;
 }
 
 .hero h3{
-    font-size:17px;
+font-size:17px;
 }
 
 .hero p{
-    font-size:14px;
+font-size:14px;
 }
 
 .statistics{
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 }
 
 .stat-card{
-    padding:16px;
-}
-
-.stat-card h2{
-    font-size:28px;
-}
-
-.preview-section{
-    padding:18px;
+padding:16px;
 }
 
 }
