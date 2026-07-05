@@ -25,7 +25,7 @@ function Service() {
       icon: "☎️",
       desc: "Hubungi Pemerintah Desa Donowarih melalui email resmi atau nomor telepon yang tersedia apabila membutuhkan informasi lebih lanjut.",
       button: "Hubungi Desa",
-      link: "mailto:donowarih123@gmail.com",
+      link: "mailto:donowarih.karangploso@malangkab.go.id",
     },
 
   ];
@@ -106,7 +106,7 @@ function Service() {
 
             <span>Email</span>
 
-            <strong>donowarih123@gmail.com</strong>
+            <strong>donowarih.karangploso@malangkab.go.id</strong>
 
           </div>
 
@@ -114,7 +114,7 @@ function Service() {
 
             <span>Telepon</span>
 
-            <strong>(0341) 464-624</strong>
+            <strong>+6281230532606</strong>
 
           </div>
 
