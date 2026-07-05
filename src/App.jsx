@@ -30,6 +30,11 @@ function App() {
             />
 
             <Route
+              path="/dashboard"
+              element={<Dashboard />}
+            />
+
+            <Route
               path="/map"
               element={<MapPage />}
             />
@@ -40,17 +45,17 @@ function App() {
             />
 
             <Route
-              path="/potensi"
+              path="/potential"
               element={<Potential />}
             />
 
             <Route
-              path="/pelayanan"
+              path="/service"
               element={<Service />}
             />
 
             <Route
-              path="/tentang"
+              path="/about"
               element={<About />}
             />
 
