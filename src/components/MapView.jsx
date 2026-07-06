@@ -1,5 +1,11 @@
-import { useMemo } from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { useCallback, useMemo } from "react";
+import {
+  GoogleMap,
+  useJsApiLoader,
+} from "@react-google-maps/api";
+
+import desaGeojson from "../geojson/desa.geojson";
+
 import "./MapView.css";
 
 const center = {
@@ -24,29 +30,66 @@ function MapView() {
 
   const options = useMemo(() => mapOptions, []);
 
+  const onLoad = useCallback((map) => {
+
+    map.data.addGeoJson(desaGeojson);
+
+    map.data.setStyle({
+
+      fillColor: "#22c55e",
+
+      fillOpacity: 0.15,
+
+      strokeColor: "#16a34a",
+
+      strokeWeight: 3,
+
+    });
+
+  }, []);
+
   if (!isLoaded) {
+
     return (
+
       <div className="map-wrapper">
+
         <div className="loading-map">
+
           Memuat Google Maps...
+
         </div>
+
       </div>
+
     );
+
   }
 
   return (
+
     <div className="map-wrapper">
 
       <GoogleMap
+
         mapContainerClassName="google-map"
+
         center={center}
-        zoom={15}
+
+        zoom={14}
+
         options={options}
+
         mapTypeId="hybrid"
+
+        onLoad={onLoad}
+
       />
 
     </div>
+
   );
+
 }
 
 export default MapView;
