@@ -1,6 +1,11 @@
 import "./Sidebar.css";
 
-function Sidebar({ onClose }) {
+function Sidebar({
+  onClose,
+  layers,
+  onLayerChange,
+}) {
+
   return (
     <aside className="sidebar">
 
@@ -26,11 +31,35 @@ function Sidebar({ onClose }) {
 
       <h3>📂 Layer Peta</h3>
 
-      <Check text="Batas Desa" checked />
-      <Check text="Dusun Karangan" checked />
-      <Check text="Dusun Karangjuwet" checked />
-      <Check text="Dusun Jaraan" checked />
-      <Check text="Dusun Borogragal" checked />
+      <Check
+        text="Batas Desa"
+        checked={layers.desa}
+        onChange={() => onLayerChange("desa")}
+      />
+
+      <Check
+        text="Dusun Borogragal"
+        checked={layers.borogragal}
+        onChange={() => onLayerChange("borogragal")}
+      />
+
+      <Check
+        text="Dusun Jaraan"
+        checked={layers.jaraan}
+        onChange={() => onLayerChange("jaraan")}
+      />
+
+      <Check
+        text="Dusun Karangan"
+        checked={layers.karangan}
+        onChange={() => onLayerChange("karangan")}
+      />
+
+      <Check
+        text="Dusun Karangjuwet"
+        checked={layers.karangjuwet}
+        onChange={() => onLayerChange("karangjuwet")}
+      />
 
       <hr />
 
@@ -42,16 +71,32 @@ function Sidebar({ onClose }) {
   );
 }
 
-function Check({ text, checked }) {
+function Check({
+
+  text,
+
+  checked,
+
+  onChange,
+
+}) {
+
   return (
+
     <label className="check-item">
+
       <input
         type="checkbox"
-        defaultChecked={checked}
+        checked={checked}
+        onChange={onChange}
       />
+
       <span>{text}</span>
+
     </label>
+
   );
+
 }
 
 export default Sidebar;

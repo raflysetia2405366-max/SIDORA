@@ -4,33 +4,47 @@ import MapView from "../components/MapView";
 import "./MapPage.css";
 
 function MapPage() {
+
   const [showSidebar, setShowSidebar] = useState(true);
+
+  const [layers, setLayers] = useState({
+    desa: true,
+    borogragal: true,
+    jaraan: true,
+    karangan: true,
+    karangjuwet: true,
+  });
+
+  const handleLayerChange = (layer) => {
+    setLayers((prev) => ({
+      ...prev,
+      [layer]: !prev[layer],
+    }));
+  };
 
   return (
     <div className="map-page">
 
-      {/* Header */}
       <div className="page-header">
         <h1>🗺 Peta Interaktif Desa Donowarih</h1>
       </div>
 
-      {/* Layout */}
       <div
         className={`map-layout ${
           showSidebar ? "sidebar-open" : "sidebar-close"
         }`}
       >
 
-        {/* Sidebar */}
         <aside className="sidebar-container">
 
           <Sidebar
             onClose={() => setShowSidebar(false)}
+            layers={layers}
+            onLayerChange={handleLayerChange}
           />
 
         </aside>
 
-        {/* Map */}
         <section className="map-container">
 
           {!showSidebar && (
@@ -42,7 +56,9 @@ function MapPage() {
             </button>
           )}
 
-          <MapView />
+          <MapView
+            layers={layers}
+          />
 
         </section>
 

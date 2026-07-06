@@ -8,6 +8,8 @@ import agm3 from "../assets/agm3.jpeg";
 import religi1 from "../assets/religi1.jpeg";
 import religi2 from "../assets/religi2.jpeg";
 
+import ra from "../assets/ra.jpeg";
+
 function Potential() {
 
   const [selected, setSelected] = useState(null);
@@ -40,18 +42,6 @@ function Potential() {
     },
 
     {
-      title: "Wisata Petik Jeruk",
-      subtitle: "Agrowisata",
-      image: null,
-      gallery: [],
-      location: "Desa Donowarih",
-      maps: "",
-      featured: false,
-      desc:
-        "Wisata edukasi pertanian dimana pengunjung dapat memetik jeruk secara langsung dari kebun masyarakat.",
-    },
-
-    {
       title: "Wisata Lereng Kebun",
       subtitle: "(WLK)",
       image: null,
@@ -65,14 +55,14 @@ function Potential() {
 
     {
       title: "Rest Area",
-      subtitle: "Karangploso",
-      image: null,
-      gallery: [],
-      location: "Perbatasan Donowarih",
+      subtitle: "Donowarih",
+      image: ra,
+      gallery: [ra],
+      location: "Desa Donowarih",
       maps: "",
       featured: false,
       desc:
-        "Tempat persinggahan wisatawan yang dilengkapi pusat kuliner dan UMKM lokal.",
+      "Rest Area Donowarih merupakan tempat persinggahan wisatawan yang berada di kawasan Desa Donowarih. Fasilitas ini menyediakan area parkir, tempat beristirahat, gazebo, serta menjadi pusat kuliner dan UMKM lokal sehingga mendukung kegiatan pariwisata desa.",
     },
 
   ];
