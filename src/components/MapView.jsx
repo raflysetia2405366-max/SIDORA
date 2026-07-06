@@ -1,11 +1,5 @@
 import { useCallback, useMemo } from "react";
-import {
-  GoogleMap,
-  useJsApiLoader,
-} from "@react-google-maps/api";
-
-import desaGeojson from "../geojson/desa.geojson";
-
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./MapView.css";
 
 const center = {
@@ -30,21 +24,35 @@ function MapView() {
 
   const options = useMemo(() => mapOptions, []);
 
-  const onLoad = useCallback((map) => {
+  const onLoad = useCallback(async (map) => {
 
-    map.data.addGeoJson(desaGeojson);
+    try {
 
-    map.data.setStyle({
+      const response = await fetch("/geojson/desa.geojson");
 
-      fillColor: "#22c55e",
+      const geojson = await response.json();
 
-      fillOpacity: 0.15,
+      console.log(geojson);
 
-      strokeColor: "#16a34a",
+      map.data.addGeoJson(geojson);
 
-      strokeWeight: 3,
+      map.data.setStyle({
 
-    });
+        fillColor: "#22c55e",
+
+        fillOpacity: 0.2,
+
+        strokeColor: "#16a34a",
+
+        strokeWeight: 3,
+
+      });
+
+    } catch (err) {
+
+      console.error(err);
+
+    }
 
   }, []);
 
