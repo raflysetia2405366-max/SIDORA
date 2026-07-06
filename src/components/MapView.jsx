@@ -30,9 +30,15 @@ function MapView() {
 
       const response = await fetch("/geojson/desa.geojson");
 
+      console.log(geojson);
+
       const geojson = await response.json();
 
       console.log(geojson);
+
+      const features = map.data.addGeoJson(geojson);
+      
+      console.log("Features:", features);
 
       map.data.addGeoJson(geojson);
 
