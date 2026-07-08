@@ -27,6 +27,8 @@ z-index:9999;
 }
 
 /* ======================= */
+/* BRAND */
+/* ======================= */
 
 .navbar-brand{
 
@@ -38,15 +40,35 @@ gap:15px;
 
 }
 
+/* ======================= */
+/* LOGO */
+/* ======================= */
+
 .navbar-logo{
 
-width:55px;
+width:60px;
 
-height:55px;
+height:60px;
 
-object-fit:contain;
+border-radius:50%;
+
+object-fit:cover;
+
+background:#f8f7e8;
+
+padding:2px;
+
+display:block;
+
+box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+flex-shrink:0;
 
 }
+
+/* ======================= */
+/* BRAND TEXT */
+/* ======================= */
 
 .brand-text{
 
@@ -83,6 +105,8 @@ color:#9ca3af;
 }
 
 /* ======================= */
+/* MENU */
+/* ======================= */
 
 .navbar-menu{
 
@@ -110,15 +134,11 @@ transition:.25s;
 
 }
 
-/* hanya teks berubah */
-
 .navbar-menu a:hover{
 
 color:#22c55e;
 
 }
-
-/* menu aktif */
 
 .navbar-menu a.active{
 
@@ -128,6 +148,8 @@ border-bottom:2px solid #22c55e;
 
 }
 
+/* ======================= */
+/* MENU BUTTON */
 /* ======================= */
 
 .menu-button{
@@ -146,6 +168,8 @@ cursor:pointer;
 
 }
 
+/* ======================= */
+/* TABLET */
 /* ======================= */
 
 @media(max-width:992px){
@@ -168,8 +192,18 @@ font-size:26px;
 
 }
 
+.navbar-logo{
+
+width:56px;
+
+height:56px;
+
 }
 
+}
+
+/* ======================= */
+/* MOBILE */
 /* ======================= */
 
 @media(max-width:768px){
@@ -221,14 +255,16 @@ font-size:11px;
 }
 
 /* ======================= */
+/* SMALL MOBILE */
+/* ======================= */
 
 @media(max-width:480px){
 
 .navbar-logo{
 
-width:46px;
+width:50px;
 
-height:46px;
+height:50px;
 
 }
 

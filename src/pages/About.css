@@ -1,3 +1,5 @@
+/* ================= PAGE ================= */
+
 .about-page{
     padding:30px;
     background:#071019;
@@ -16,12 +18,32 @@
     box-shadow:0 10px 30px rgba(0,0,0,.18);
 }
 
+/* ================= LOGO ================= */
+
 .about-logo{
-    width:110px;
-    height:110px;
-    object-fit:contain;
-    margin:0 auto 20px;
+
+    width:160px;
+
+    height:160px;
+
     display:block;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#f8f7e8;
+
+    padding:6px;
+
+    border:5px solid #22c55e;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.30),
+        0 0 20px rgba(34,197,94,.25);
+
 }
 
 .hero-card h1{
@@ -51,93 +73,151 @@
 /* ================= GRID ================= */
 
 .about-grid{
+
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
     gap:25px;
+
     margin-bottom:30px;
+
 }
 
 .about-card{
+
     background:#111827;
+
     border:1px solid #1f2937;
+
     border-radius:20px;
+
     padding:30px;
+
     box-shadow:0 8px 20px rgba(0,0,0,.15);
+
 }
 
-/* Tidak ada hover */
-
 .about-card:hover{
+
     transform:none;
+
     border-color:#1f2937;
+
     box-shadow:0 8px 20px rgba(0,0,0,.15);
+
 }
 
 .about-card h2{
+
     color:#22c55e;
+
     margin-bottom:22px;
+
     font-size:30px;
+
 }
 
 .about-card ul{
+
     list-style:none;
+
     padding:0;
+
 }
 
 .about-card li{
+
     position:relative;
+
     padding-left:30px;
+
     margin-bottom:18px;
+
     color:#d1d5db;
+
     font-size:17px;
+
     line-height:1.8;
+
 }
 
 .about-card li::before{
+
     content:"✓";
+
     position:absolute;
+
     left:0;
+
     top:0;
+
     color:#22c55e;
+
     font-weight:bold;
+
 }
 
 /* ================= DEVELOPER ================= */
 
 .developer-card{
+
     background:#111827;
+
     border:1px solid #1f2937;
+
     border-radius:20px;
+
     padding:35px;
+
     box-shadow:0 8px 20px rgba(0,0,0,.15);
+
 }
 
 .developer-card h2{
+
     color:#22c55e;
+
     margin-bottom:25px;
+
     font-size:30px;
+
 }
 
 .developer-card table{
+
     width:100%;
+
     border-collapse:collapse;
+
 }
 
 .developer-card td{
+
     padding:18px 0;
+
     border-bottom:1px solid #1f2937;
+
     color:#d1d5db;
+
     font-size:16px;
+
 }
 
 .developer-card tr:last-child td{
+
     border-bottom:none;
+
 }
 
 .developer-card td:first-child{
+
     width:220px;
+
     color:white;
+
     font-weight:600;
+
 }
 
 /* ================= TABLET ================= */
@@ -145,24 +225,35 @@
 @media(max-width:992px){
 
 .about-page{
+
 padding:22px;
+
 }
 
 .hero-card{
+
 padding:35px;
+
 }
 
 .about-grid{
+
 grid-template-columns:1fr;
+
 }
 
 .hero-card h1{
+
 font-size:46px;
+
 }
 
 .about-logo{
-width:90px;
-height:90px;
+
+width:130px;
+
+height:130px;
+
 }
 
 }
@@ -172,59 +263,92 @@ height:90px;
 @media(max-width:768px){
 
 .about-page{
+
 padding:18px;
+
 }
 
 .hero-card{
+
 padding:24px;
+
 }
 
 .about-logo{
-width:75px;
-height:75px;
+
+width:100px;
+
+height:100px;
+
+padding:5px;
+
+border-width:4px;
+
 }
 
 .hero-card h1{
+
 font-size:36px;
+
 }
 
 .hero-card h3{
+
 font-size:20px;
+
 }
 
 .hero-card p{
+
 font-size:15px;
+
 line-height:1.8;
+
 }
 
 .about-card{
+
 padding:22px;
+
 }
 
 .about-card h2{
+
 font-size:24px;
+
 }
 
 .developer-card{
+
 padding:22px;
+
 }
 
 .developer-card table,
 .developer-card tbody,
 .developer-card tr,
 .developer-card td{
+
 display:block;
+
 width:100%;
+
 }
 
 .developer-card td{
+
 padding:8px 0;
+
 border:none;
+
 }
 
 .developer-card td:first-child{
+
 padding-top:18px;
+
 color:#22c55e;
+
 }
 
 }
@@ -234,31 +358,57 @@ color:#22c55e;
 @media(max-width:480px){
 
 .about-page{
+
 padding:12px;
+
 }
 
 .hero-card{
+
 padding:20px;
+
+}
+
+.about-logo{
+
+width:90px;
+
+height:90px;
+
+padding:4px;
+
+border-width:3px;
+
 }
 
 .hero-card h1{
+
 font-size:30px;
+
 }
 
 .hero-card h3{
+
 font-size:18px;
+
 }
 
 .hero-card p{
+
 font-size:14px;
+
 }
 
 .about-card{
+
 padding:18px;
+
 }
 
 .developer-card{
+
 padding:18px;
+
 }
 
 }
