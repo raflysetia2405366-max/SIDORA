@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "./Potential.css";
-
 import agm1 from "../assets/agm1.jpeg";
 import agm2 from "../assets/agm2.jpeg";
 import agm3 from "../assets/agm3.jpeg";
-
 import religi1 from "../assets/religi1.jpeg";
 import religi2 from "../assets/religi2.jpeg";
-
 import ra from "../assets/ra.jpeg";
+import wlk from "../assets/wlk.jpeg";
 
 function Potential() {
 
@@ -44,8 +42,8 @@ function Potential() {
     {
       title: "Wisata Lereng Kebun",
       subtitle: "(WLK)",
-      image: null,
-      gallery: [],
+      image: wlk,
+      gallery: [wlk],
       location: "Desa Donowarih",
       maps: "",
       featured: false,
