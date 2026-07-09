@@ -1,13 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 import MapPage from "./pages/MapPage";
 
 import "./App.css";
 
 function App() {
+
   return (
+
     <BrowserRouter>
 
       <div className="app">
@@ -17,6 +20,12 @@ function App() {
         <main className="main-content">
 
           <Routes>
+
+            <Route
+              path="/"
+              element={<Navigate to="/map" replace />}
+            />
+
             <Route
               path="/map"
               element={<MapPage />}
@@ -31,7 +40,9 @@ function App() {
       </div>
 
     </BrowserRouter>
+
   );
+
 }
 
 export default App;

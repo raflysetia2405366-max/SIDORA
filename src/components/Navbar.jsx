@@ -14,6 +14,8 @@ function Navbar() {
 
     <header className="navbar">
 
+      {/* ================= LOGO ================= */}
+
       <div className="navbar-brand">
 
         <img
@@ -32,6 +34,8 @@ function Navbar() {
 
       </div>
 
+      {/* ================= MENU BUTTON ================= */}
+
       <button
         className="menu-button"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -39,32 +43,17 @@ function Navbar() {
         ☰
       </button>
 
+      {/* ================= MENU ================= */}
+
       <nav
         className={`navbar-menu ${menuOpen ? "active" : ""}`}
       >
 
-        <NavLink to="/" onClick={closeMenu}>
-          Dashboard
-        </NavLink>
-
-        <NavLink to="/map" onClick={closeMenu}>
+        <NavLink
+          to="/map"
+          onClick={closeMenu}
+        >
           Peta
-        </NavLink>
-
-        <NavLink to="/profile" onClick={closeMenu}>
-          Profil
-        </NavLink>
-
-        <NavLink to="/potential" onClick={closeMenu}>
-          Potensi
-        </NavLink>
-
-        <NavLink to="/service" onClick={closeMenu}>
-          Pelayanan
-        </NavLink>
-
-        <NavLink to="/about" onClick={closeMenu}>
-          Tentang
         </NavLink>
 
       </nav>
