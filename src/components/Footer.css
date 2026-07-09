@@ -1,8 +1,8 @@
 .footer{
 
-    background:#0b1220;
+    background:#264f9a;
 
-    border-top:1px solid #1f2937;
+    border-top:1px solid #245497;
 
     margin-top:60px;
 
@@ -16,7 +16,7 @@
 
     gap:25px;
 
-    color:#9ca3af;
+    color:#26519c;
 
     flex-wrap:wrap;
 
@@ -50,7 +50,7 @@
 
     font-size:14px;
 
-    color:#9ca3af;
+    color:#22488a;
 
 }
 
@@ -72,7 +72,7 @@
 
     font-weight:600;
 
-    color:#22c55e;
+    color:#bbcbde;
 
 }
 
