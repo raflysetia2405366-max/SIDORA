@@ -99,12 +99,7 @@ function About() {
 
             <tr>
               <td>Lokasi</td>
-              <td>Desa Donowarih, Kecamatan Karangploso</td>
-            </tr>
-
-            <tr>
-              <td>Kabupaten</td>
-              <td>Malang</td>
+              <td>Desa Donowarih, Kecamatan Karangploso, Kabupaten Malang</td>
             </tr>
 
             <tr>
