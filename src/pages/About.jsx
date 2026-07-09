@@ -94,7 +94,7 @@ function About() {
 
             <tr>
               <td>Program</td>
-              <td>UMBBM 2026</td>
+              <td>UM Belajar Bersama Masyarakat Tahun 2026</td>
             </tr>
 
             <tr>
