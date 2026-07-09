@@ -14,7 +14,7 @@ body{
 
   font-family:Inter,"Segoe UI",sans-serif;
 
-  background:#071019;
+  background:#aec0d3;
 
   color:white;
 
@@ -66,9 +66,9 @@ button:hover{
 
 .card{
 
-  background:#111827;
+  background:#bfc6d4;
 
-  border:1px solid #1f2937;
+  border:1px solid #aab9cf;
 
   border-radius:18px;
 
