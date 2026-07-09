@@ -17,7 +17,7 @@ function Footer() {
       <div className="footer-center">
 
         <span>
-          Universitas Negeri Malang Belajar Bersama Masyarakat (UMBBM)
+          Universitas Negeri Malang Belajar Bersama Masyarakat (UMBBM) Kelompok 2 
         </span>
 
       </div>
