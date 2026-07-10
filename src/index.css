@@ -52,8 +52,6 @@ button:hover{
 
 }
 
-/* ============================= */
-
 .container{
 
   width:min(1400px,95%);
@@ -61,8 +59,6 @@ button:hover{
   margin:auto;
 
 }
-
-/* ============================= */
 
 .card{
 
@@ -73,8 +69,6 @@ button:hover{
   border-radius:18px;
 
 }
-
-/* ============================= */
 
 .title{
 
@@ -95,8 +89,6 @@ button:hover{
   line-height:1.8;
 
 }
-
-/* ============================= */
 
 .grid-2{
 
@@ -128,8 +120,6 @@ button:hover{
 
 }
 
-/* ============================= */
-
 @media(max-width:1200px){
 
 .grid-4{
@@ -139,8 +129,6 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
-
-/* ============================= */
 
 @media(max-width:900px){
 
@@ -163,8 +151,6 @@ grid-template-columns:1fr;
 }
 
 }
-
-/* ============================= */
 
 @media(max-width:768px){
 
@@ -199,8 +185,6 @@ font-size:15px;
 }
 
 }
-
-/* ============================= */
 
 @media(max-width:480px){
 
