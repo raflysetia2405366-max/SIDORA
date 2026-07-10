@@ -7,7 +7,10 @@ function Sidebar({
 }) {
 
   return (
+
     <aside className="sidebar">
+
+      {/* ================= HEADER ================= */}
 
       <div className="sidebar-header">
 
@@ -18,11 +21,14 @@ function Sidebar({
           ☰
         </button>
 
-        <div>
+        <div className="sidebar-title">
+
           <h2>SIDORA</h2>
+
           <p className="sidebar-subtitle">
             Layer WebGIS
           </p>
+
         </div>
 
       </div>
@@ -68,7 +74,9 @@ function Sidebar({
       </p>
 
     </aside>
+
   );
+
 }
 
 function Check({

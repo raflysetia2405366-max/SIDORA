@@ -28,7 +28,9 @@
 
     align-items:center;
 
-    gap:14px;
+    justify-content:flex-start;
+
+    gap:10px;
 
     margin-bottom:6px;
 
@@ -70,29 +72,45 @@
 
 }
 
+/* ================= TITLE ================= */
+
+.sidebar-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    flex:1;
+
+}
+
 .sidebar h2{
 
     margin:0;
 
-    font-size:22px;
+    font-size:21px;
 
     color:#1F2937;
 
     font-weight:700;
 
-    line-height:1.2;
+    line-height:1;
 
 }
 
 .sidebar-subtitle{
 
-    margin-top:3px;
+    margin:2px 0 0;
 
     color:#6B7280;
 
-    font-size:13px;
+    font-size:12px;
 
-    line-height:1.5;
+    line-height:1.3;
 
 }
 
