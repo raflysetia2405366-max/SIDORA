@@ -1,8 +1,12 @@
+/* ================= FOOTER ================= */
+
 .footer{
 
-    background:#264f9a;
-
-    border-top:1px solid #245497;
+    background:linear-gradient(
+    90deg,
+    #2E6BFF,
+    #4A7DFF
+    );
 
     margin-top:60px;
 
@@ -16,11 +20,15 @@
 
     gap:25px;
 
-    color:#26519c;
+    color:white;
 
     flex-wrap:wrap;
 
+    box-shadow:0 -6px 20px rgba(46,107,255,.15);
+
 }
+
+/* ================= LEFT ================= */
 
 .footer-left{
 
@@ -34,11 +42,13 @@
 
 .footer-left h2{
 
-    color:white;
-
     margin:0;
 
     font-size:24px;
+
+    color:white;
+
+    font-weight:700;
 
 }
 
@@ -48,9 +58,11 @@
 
     font-size:14px;
 
-    color:#22488a;
+    color:rgba(255,255,255,.82);
 
 }
+
+/* ================= CENTER ================= */
 
 .footer-center{
 
@@ -58,7 +70,19 @@
 
     font-size:14px;
 
+    color:white;
+
 }
+
+.footer-center span{
+
+    color:#FFD8E8;
+
+    font-weight:600;
+
+}
+
+/* ================= RIGHT ================= */
 
 .footer-right{
 
@@ -66,9 +90,21 @@
 
     font-weight:600;
 
-    color:#bbcbde;
+    color:white;
 
 }
+
+/* ================= PINK ACCENT ================= */
+
+.footer-heart{
+
+    color:#FF5FA2;
+
+    margin-right:6px;
+
+}
+
+/* ================= TABLET ================= */
 
 @media(max-width:992px){
 
@@ -81,6 +117,8 @@ text-align:center;
 }
 
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:768px){
 
@@ -110,6 +148,8 @@ font-size:13px;
 
 font-size:13px;
 
+line-height:1.8;
+
 }
 
 .footer-right{
@@ -119,6 +159,8 @@ font-size:13px;
 }
 
 }
+
+/* ================= SMALL MOBILE ================= */
 
 @media(max-width:480px){
 
@@ -145,8 +187,6 @@ font-size:12px;
 .footer-center{
 
 font-size:12px;
-
-line-height:1.6;
 
 }
 

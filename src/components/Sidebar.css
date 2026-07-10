@@ -1,20 +1,26 @@
+/* ================= SIDEBAR ================= */
+
 .sidebar{
 
-    background:#627fae;
+    background:#DCEBFF;
 
-    border:1px solid #6482ad;
+    border:none;
 
-    border-radius:18px;
+    border-radius:22px;
 
-    padding:22px;
+    padding:24px;
 
-    color:white;
+    color:#1F2937;
 
     position:sticky;
 
     top:95px;
 
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
+
+/* ================= HEADER ================= */
 
 .sidebar-header{
 
@@ -22,29 +28,43 @@
 
     align-items:center;
 
-    gap:15px;
+    justify-content:space-between;
+
+    margin-bottom:10px;
 
 }
 
 .sidebar-toggle{
 
-    width:45px;
+    width:50px;
 
-    height:45px;
+    height:50px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    background:#229fc5;
+    background:linear-gradient(
+    135deg,
+    #FFD8E8,
+    #FF9BC2
+    );
 
-    color:white;
+    color:#FF4D8D;
 
     font-size:22px;
 
     font-weight:bold;
 
     cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.sidebar-toggle:hover{
+
+    transform:scale(1.05);
 
 }
 
@@ -54,31 +74,45 @@
 
     font-size:28px;
 
+    color:#1F2937;
+
+    font-weight:700;
+
 }
 
 .sidebar-subtitle{
 
-    margin-top:5px;
+    margin-top:6px;
 
-    color:#9ca3af;
+    color:#6B7280;
+
+    font-size:15px;
+
+    line-height:1.6;
 
 }
 
 .sidebar hr{
 
-    margin:25px 0;
+    margin:22px 0;
 
-    border:1px solid #6886af;
+    border:none;
+
+    border-top:1px solid #C8D8F8;
 
 }
 
 .sidebar h3{
 
-    color:#229fc5;
+    color:#FF4D8D;
 
     margin-bottom:18px;
 
+    font-size:20px;
+
 }
+
+/* ================= CHECKBOX ================= */
 
 .check-item{
 
@@ -86,7 +120,7 @@
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
     margin-bottom:16px;
 
@@ -94,13 +128,31 @@
 
     cursor:pointer;
 
+    padding:12px 14px;
+
+    border-radius:14px;
+
+    background:white;
+
+    transition:.25s;
+
+}
+
+.check-item:hover{
+
+    background:#F8FAFF;
+
+    transform:translateX(4px);
+
 }
 
 .check-item input{
 
-    width:18px;
+    width:19px;
 
-    height:18px;
+    height:19px;
+
+    accent-color:#FF5FA2;
 
     flex-shrink:0;
 
@@ -112,7 +164,11 @@
 
     flex:1;
 
+    color:#1F2937;
+
     font-size:16px;
+
+    font-weight:500;
 
     line-height:1.5;
 
@@ -120,21 +176,33 @@
 
 }
 
+/* ================= NOTE ================= */
+
 .sidebar-note{
 
-    color:#9ca3af;
+    margin-top:18px;
+
+    color:#6B7280;
 
     font-size:14px;
 
     line-height:1.7;
 
+    border-top:1px solid #C8D8F8;
+
+    padding-top:18px;
+
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:992px){
 
 .sidebar{
 
 position:static;
+
+margin-bottom:20px;
 
 }
 
