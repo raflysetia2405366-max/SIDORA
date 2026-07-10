@@ -12,18 +12,10 @@ import {
 
 import "./MapView.css";
 
-/* ==========================================
-   CENTER MAP
-========================================== */
-
 const center = {
   lat: -7.8847,
   lng: 112.5746,
 };
-
-/* ==========================================
-   MAP OPTIONS
-========================================== */
 
 const mapOptions = {
   streetViewControl: false,
@@ -34,11 +26,6 @@ const mapOptions = {
   gestureHandling: "greedy",
 };
 
-/* ==========================================
-   LAYER CONFIG (key -> file)
-   Tambahkan/hapus layer cukup di sini
-========================================== */
-
 const LAYER_FILES = {
   desa: "/geojson/desa.geojson",
   borogragal: "/geojson/borogragal.geojson",
@@ -46,10 +33,6 @@ const LAYER_FILES = {
   karangan: "/geojson/karangan.geojson",
   karangjuwet: "/geojson/karangjuwet.geojson",
 };
-
-/* ==========================================
-   HELPER FIT BOUNDS
-========================================== */
 
 function processPoints(geometry, callback, thisArg) {
   if (geometry instanceof window.google.maps.LatLng) {
@@ -63,10 +46,6 @@ function processPoints(geometry, callback, thisArg) {
   }
 }
 
-/* ==========================================
-   MAP VIEW
-========================================== */
-
 function MapView({ layers }) {
   const mapRef = useRef(null);
 
@@ -78,8 +57,6 @@ function MapView({ layers }) {
     karangjuwet: [],
   });
 
-  // Selalu menyimpan nilai `layers` TERBARU, supaya callback yang
-  // di-memo (seperti onLoad) tidak membaca state lama (stale closure).
   const layersRef = useRef(layers);
   useEffect(() => {
     layersRef.current = layers;
@@ -91,10 +68,6 @@ function MapView({ layers }) {
 
   const options = useMemo(() => mapOptions, []);
 
-  /* ==========================================
-     CLEAR LAYER
-  ========================================== */
-
   const clearLayer = (key) => {
     if (!mapRef.current) return;
 
@@ -104,10 +77,6 @@ function MapView({ layers }) {
 
     featureRefs.current[key] = [];
   };
-
-  /* ==========================================
-     LOAD LAYER
-  ========================================== */
 
   const loadLayer = async (key, file) => {
     if (!mapRef.current) return;
@@ -125,10 +94,6 @@ function MapView({ layers }) {
     const features = mapRef.current.data.addGeoJson(geojson);
     featureRefs.current[key] = features;
   };
-
-  /* ==========================================
-     STYLE MAP
-  ========================================== */
 
   const applyStyle = () => {
     if (!mapRef.current) return;
@@ -190,10 +155,6 @@ function MapView({ layers }) {
     });
   };
 
-  /* ==========================================
-     FIT MAP
-  ========================================== */
-
   const fitMap = () => {
     if (!mapRef.current) return;
 
@@ -207,17 +168,6 @@ function MapView({ layers }) {
       mapRef.current.fitBounds(bounds);
     }
   };
-
-  /* ==========================================
-     SYNC LAYERS
-     Satu fungsi tunggal yang dipakai baik saat
-     peta pertama kali load, maupun saat checkbox
-     berubah. Selalu membaca `layersRef.current`
-     supaya tidak pernah pakai data basi (stale),
-     dan setiap layer dibungkus try/catch supaya
-     satu layer gagal fetch tidak menghentikan
-     proses sync layer lainnya.
-  ========================================== */
 
   const syncLayers = useCallback(async () => {
     if (!mapRef.current) return;
@@ -244,10 +194,6 @@ function MapView({ layers }) {
     fitMap();
   }, []);
 
-  /* ==========================================
-     ON LOAD
-  ========================================== */
-
   const onLoad = useCallback(
     async (map) => {
       mapRef.current = map;
@@ -255,16 +201,6 @@ function MapView({ layers }) {
     },
     [syncLayers]
   );
-
-  /* ==========================================
-     ON UNMOUNT
-     Penting untuk React StrictMode: di development,
-     StrictMode sengaja mount → unmount → mount lagi
-     untuk mendeteksi efek samping yang tidak bersih.
-     Tanpa ini, `mapRef` bisa menunjuk ke instance peta
-     yang sudah tidak tampil, sehingga load/clear layer
-     terjadi di peta yang salah (tidak terlihat user).
-  ========================================== */
 
   const onUnmount = useCallback(() => {
     mapRef.current = null;
@@ -276,10 +212,6 @@ function MapView({ layers }) {
       karangjuwet: [],
     };
   }, []);
-
-  /* ==========================================
-     UPDATE LAYER (CHECKBOX)
-  ========================================== */
 
   useEffect(() => {
     syncLayers();
@@ -309,4 +241,3 @@ function MapView({ layers }) {
 }
 
 export default MapView;
-// test
