@@ -4,13 +4,15 @@
 
     height:75vh;
 
-    border-radius:18px;
+    background:#FFFFFF;
+
+    border-radius:24px;
 
     overflow:hidden;
 
-    background:#111827;
+    padding:12px;
 
-    border:1px solid #1f2937;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
@@ -19,6 +21,10 @@
     width:100%;
 
     height:100%;
+
+    border-radius:18px;
+
+    overflow:hidden;
 
 }
 
@@ -34,9 +40,11 @@
 
     align-items:center;
 
-    color:white;
+    color:#2563EB;
 
     font-size:18px;
+
+    font-weight:600;
 
 }
 
@@ -56,6 +64,8 @@ height:65vh;
 
 height:60vh;
 
+padding:8px;
+
 }
 
 }
@@ -65,6 +75,8 @@ height:60vh;
 .map-wrapper{
 
 height:55vh;
+
+padding:6px;
 
 }
 
