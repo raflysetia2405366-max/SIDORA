@@ -6,9 +6,9 @@
 
     border:none;
 
-    border-radius:22px;
+    border-radius:20px;
 
-    padding:24px;
+    padding:18px;
 
     color:#1F2937;
 
@@ -16,7 +16,7 @@
 
     top:95px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -28,37 +28,39 @@
 
     align-items:center;
 
-    justify-content:space-between;
+    gap:14px;
 
-    margin-bottom:10px;
+    margin-bottom:6px;
 
 }
 
 .sidebar-toggle{
 
-    width:50px;
+    width:42px;
 
-    height:50px;
+    height:42px;
 
     border:none;
 
-    border-radius:14px;
+    border-radius:12px;
 
     background:linear-gradient(
-    135deg,
-    #FFD8E8,
-    #FF9BC2
+        135deg,
+        #FFD8E8,
+        #FF9BC2
     );
 
     color:#FF4D8D;
 
-    font-size:22px;
+    font-size:18px;
 
     font-weight:bold;
 
     cursor:pointer;
 
     transition:.25s;
+
+    flex-shrink:0;
 
 }
 
@@ -72,29 +74,33 @@
 
     margin:0;
 
-    font-size:28px;
+    font-size:22px;
 
     color:#1F2937;
 
     font-weight:700;
 
+    line-height:1.2;
+
 }
 
 .sidebar-subtitle{
 
-    margin-top:6px;
+    margin-top:3px;
 
     color:#6B7280;
 
-    font-size:15px;
+    font-size:13px;
 
-    line-height:1.6;
+    line-height:1.5;
 
 }
 
+/* ================= GARIS ================= */
+
 .sidebar hr{
 
-    margin:22px 0;
+    margin:18px 0;
 
     border:none;
 
@@ -102,13 +108,17 @@
 
 }
 
+/* ================= JUDUL ================= */
+
 .sidebar h3{
 
     color:#FF4D8D;
 
-    margin-bottom:18px;
+    margin-bottom:14px;
 
-    font-size:20px;
+    font-size:18px;
+
+    font-weight:700;
 
 }
 
@@ -120,17 +130,17 @@
 
     align-items:center;
 
-    gap:14px;
+    gap:12px;
 
-    margin-bottom:16px;
+    margin-bottom:12px;
 
     width:100%;
 
     cursor:pointer;
 
-    padding:12px 14px;
+    padding:10px 12px;
 
-    border-radius:14px;
+    border-radius:12px;
 
     background:white;
 
@@ -140,17 +150,17 @@
 
 .check-item:hover{
 
-    background:#F8FAFF;
+    background:#F6F9FF;
 
-    transform:translateX(4px);
+    transform:translateX(3px);
 
 }
 
 .check-item input{
 
-    width:19px;
+    width:18px;
 
-    height:19px;
+    height:18px;
 
     accent-color:#FF5FA2;
 
@@ -166,11 +176,11 @@
 
     color:#1F2937;
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:500;
 
-    line-height:1.5;
+    line-height:1.4;
 
     word-break:break-word;
 
@@ -180,17 +190,17 @@
 
 .sidebar-note{
 
-    margin-top:18px;
+    margin-top:14px;
 
-    color:#6B7280;
-
-    font-size:14px;
-
-    line-height:1.7;
+    padding-top:14px;
 
     border-top:1px solid #C8D8F8;
 
-    padding-top:18px;
+    color:#6B7280;
+
+    font-size:13px;
+
+    line-height:1.6;
 
 }
 
@@ -200,9 +210,9 @@
 
 .sidebar{
 
-position:static;
+    position:static;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
