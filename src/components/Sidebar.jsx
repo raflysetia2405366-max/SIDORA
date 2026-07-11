@@ -1,4 +1,5 @@
 import "./Sidebar.css";
+import { Menu, Layers } from "lucide-react";
 
 function Sidebar({
   onClose,
@@ -18,7 +19,7 @@ function Sidebar({
           className="sidebar-toggle"
           onClick={onClose}
         >
-          ☰
+          <Menu size={20} />
         </button>
 
         <div className="sidebar-title">
@@ -35,7 +36,7 @@ function Sidebar({
 
       <hr />
 
-      <h3>📂 Layer Peta</h3>
+      <h3><Layers size={18} /> Layer Peta</h3>
 
       <Check
         text="Batas Desa"

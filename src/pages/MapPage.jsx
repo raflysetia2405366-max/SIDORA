@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Map, Menu } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import MapView from "../components/MapView";
 import "./MapPage.css";
@@ -30,7 +31,7 @@ function MapPage() {
 
       <div className="page-header">
 
-        <h1>🗺 Peta Interaktif Desa Donowarih</h1>
+        <h1><Map size={36} /> Peta Interaktif Desa Donowarih</h1>
 
       </div>
 
@@ -45,7 +46,7 @@ function MapPage() {
             onClick={() => setShowSidebar(true)}
           >
 
-            ☰
+            <Menu size={20} />
 
           </button>
 

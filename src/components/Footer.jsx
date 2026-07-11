@@ -1,3 +1,4 @@
+import { Globe } from "lucide-react";
 import "./Footer.css";
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
 
       <div className="footer-left">
 
-        <h2>🌍 SIDORA</h2>
+        <h2><Globe size={26} /> SIDORA</h2>
 
         <p>
           Sistem Informasi Desa Donowarih
