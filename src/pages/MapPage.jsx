@@ -45,7 +45,7 @@ function MapPage() {
             onClick={() => setShowSidebar(true)}
           >
 
-            ☰ Layer Peta
+            ☰
 
           </button>
 
