@@ -1,199 +1,87 @@
 /* ================= FOOTER ================= */
 
 .footer{
-
-    background:linear-gradient(
+  background:linear-gradient(
     90deg,
-    #2E6BFF,
-    #4A7DFF
-    );
-
-    margin-top:60px;
-
-    padding:25px 40px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:25px;
-
-    color:white;
-
-    flex-wrap:wrap;
-
-    box-shadow:0 -6px 20px rgba(46,107,255,.15);
-
+    #1F3D2B,
+    #3A6B4A
+  );
+  margin-top:60px;
+  padding:25px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  color:#F5F0E1;
+  flex-wrap:wrap;
+  box-shadow:0 -6px 20px rgba(31,61,43,.2);
 }
-
-/* ================= LEFT ================= */
 
 .footer-left{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
 .footer-left h2{
-
-    margin:0;
-
-    font-size:24px;
-
-    color:white;
-
-    font-weight:700;
-
+  margin:0;
+  font-size:24px;
+  color:#F5F0E1;
+  font-weight:700;
 }
 
 .footer-left p{
-
-    margin:0;
-
-    font-size:14px;
-
-    color:rgba(255,255,255,.82);
-
+  margin:0;
+  font-size:14px;
+  color:rgba(245,240,225,.82);
 }
-
-/* ================= CENTER ================= */
 
 .footer-center{
-
-    text-align:center;
-
-    font-size:14px;
-
-    color:white;
-
+  text-align:center;
+  font-size:14px;
+  color:#F5F0E1;
 }
 
+/* Pink dipertahankan sebagai highlight teks, konsisten dengan aksen di sidebar */
 .footer-center span{
-
-    color:#FFD8E8;
-
-    font-weight:600;
-
+  color:#FFB3D1;
+  font-weight:600;
 }
-
-/* ================= RIGHT ================= */
 
 .footer-right{
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:white;
-
+  font-size:14px;
+  font-weight:600;
+  color:#F5F0E1;
 }
-
-/* ================= PINK ACCENT ================= */
 
 .footer-heart{
-
-    color:#FF5FA2;
-
-    margin-right:6px;
-
+  color:#FF5FA2;
+  margin-right:6px;
 }
-
-/* ================= TABLET ================= */
 
 @media(max-width:992px){
-
 .footer{
-
-justify-content:center;
-
-text-align:center;
-
+  justify-content:center;
+  text-align:center;
 }
-
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width:768px){
-
 .footer{
-
-flex-direction:column;
-
-padding:25px 20px;
-
-text-align:center;
-
+  flex-direction:column;
+  padding:25px 20px;
+  text-align:center;
 }
-
-.footer-left h2{
-
-font-size:22px;
-
+.footer-left h2{ font-size:22px; }
+.footer-left p{ font-size:13px; }
+.footer-center{ font-size:13px; line-height:1.8; }
+.footer-right{ font-size:13px; }
 }
-
-.footer-left p{
-
-font-size:13px;
-
-}
-
-.footer-center{
-
-font-size:13px;
-
-line-height:1.8;
-
-}
-
-.footer-right{
-
-font-size:13px;
-
-}
-
-}
-
-/* ================= SMALL MOBILE ================= */
 
 @media(max-width:480px){
-
-.footer{
-
-padding:20px 15px;
-
-gap:18px;
-
-}
-
-.footer-left h2{
-
-font-size:20px;
-
-}
-
-.footer-left p{
-
-font-size:12px;
-
-}
-
-.footer-center{
-
-font-size:12px;
-
-}
-
-.footer-right{
-
-font-size:12px;
-
-}
-
+.footer{ padding:20px 15px; gap:18px; }
+.footer-left h2{ font-size:20px; }
+.footer-left p{ font-size:12px; }
+.footer-center{ font-size:12px; }
+.footer-right{ font-size:12px; }
 }

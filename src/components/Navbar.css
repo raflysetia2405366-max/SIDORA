@@ -1,283 +1,134 @@
-/* ======================= */
-/* NAVBAR */
-/* ======================= */
+/* ================= NAVBAR ================= */
 
 .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:82px;
+  padding:0 42px;
 
-position:fixed;
+  background:linear-gradient(
+    90deg,
+    #1F3D2B,
+    #3A6B4A
+  );
 
-top:0;
-
-left:0;
-
-width:100%;
-
-height:82px;
-
-padding:0 42px;
-
-background:linear-gradient(
-90deg,
-#2E6BFF,
-#4A7DFF
-);
-
-border:none;
-
-box-shadow:0 6px 20px rgba(46,107,255,.18);
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:9999;
-
+  border:none;
+  box-shadow:0 6px 20px rgba(31,61,43,.25);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:9999;
 }
-
-/* ======================= */
 
 .navbar-brand{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
-
-/* ======================= */
 
 .navbar-logo{
-
-width:62px;
-
-height:62px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-background:white;
-
-padding:3px;
-
-display:block;
-
-box-shadow:0 6px 18px rgba(0,0,0,.15);
-
-flex-shrink:0;
-
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#F5F0E1;
+  padding:3px;
+  display:block;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  flex-shrink:0;
 }
 
-/* ======================= */
-
 .brand-text{
-
-display:flex;
-
-flex-direction:column;
-
+  display:flex;
+  flex-direction:column;
 }
 
 .brand-text h1{
-
-margin:0;
-
-font-size:31px;
-
-font-weight:800;
-
-letter-spacing:1px;
-
-color:white;
-
-line-height:1;
-
+  margin:0;
+  font-size:31px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#F5F0E1;
+  line-height:1;
 }
 
 .brand-text span{
-
-margin-top:5px;
-
-font-size:14px;
-
-color:rgba(255,255,255,.82);
-
+  margin-top:5px;
+  font-size:14px;
+  color:rgba(245,240,225,.82);
 }
 
-/* ======================= */
-
 .navbar-menu{
-
-display:flex;
-
-align-items:center;
-
-gap:28px;
-
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 
 .navbar-menu a{
-
-text-decoration:none;
-
-color:white;
-
-font-weight:600;
-
-font-size:15px;
-
-padding:10px 18px;
-
-border-radius:30px;
-
-transition:.25s;
-
+  text-decoration:none;
+  color:#F5F0E1;
+  font-weight:600;
+  font-size:15px;
+  padding:10px 18px;
+  border-radius:30px;
+  transition:.25s;
 }
 
 .navbar-menu a:hover{
-
-background:rgba(255,255,255,.18);
-
+  background:rgba(245,240,225,.15);
 }
 
+/* Pink dipakai khusus untuk state aktif — jadi terasa "sengaja" */
 .navbar-menu a.active{
-
-background:#FFD8E8;
-
-color:#FF4D8D;
-
+  background:#FFD8E8;
+  color:#FF4D8D;
 }
-
-/* ======================= */
 
 .menu-button{
-
-display:none;
-
-width:48px;
-
-height:48px;
-
-border:1px solid rgba(255,255,255,.4);
-
-border-radius:12px;
-
-background:rgba(255,255,255,.12);
-
-color:white;
-
-font-size:28px;
-
-cursor:pointer;
-
+  display:none;
+  width:48px;
+  height:48px;
+  border:1px solid rgba(245,240,225,.4);
+  border-radius:12px;
+  background:rgba(245,240,225,.12);
+  color:#F5F0E1;
+  font-size:28px;
+  cursor:pointer;
 }
-
-/* ======================= */
 
 @media(max-width:992px){
-
-.navbar{
-
-padding:0 22px;
-
+.navbar{ padding:0 22px; }
+.brand-text h1{ font-size:26px; }
+.navbar-logo{ width:56px; height:56px; }
 }
-
-.brand-text h1{
-
-font-size:26px;
-
-}
-
-.navbar-logo{
-
-width:56px;
-
-height:56px;
-
-}
-
-}
-
-/* ======================= */
 
 @media(max-width:768px){
-
 .navbar{
-
-height:auto;
-
-padding:16px 22px;
-
-flex-wrap:wrap;
-
+  height:auto;
+  padding:16px 22px;
+  flex-wrap:wrap;
 }
-
 .menu-button{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-
 .navbar-menu{
-
-display:none;
-
-width:100%;
-
-flex-direction:column;
-
-align-items:flex-start;
-
-padding-top:20px;
-
-gap:15px;
-
+  display:none;
+  width:100%;
+  flex-direction:column;
+  align-items:flex-start;
+  padding-top:20px;
+  gap:15px;
 }
-
-.navbar-menu.active{
-
-display:flex;
-
+.navbar-menu.active{ display:flex; }
+.brand-text span{ font-size:12px; }
 }
-
-.brand-text span{
-
-font-size:12px;
-
-}
-
-}
-
-/* ======================= */
 
 @media(max-width:480px){
-
-.navbar-logo{
-
-width:50px;
-
-height:50px;
-
-}
-
-.brand-text h1{
-
-font-size:22px;
-
-}
-
-.brand-text span{
-
-display:none;
-
-}
-
+.navbar-logo{ width:50px; height:50px; }
+.brand-text h1{ font-size:22px; }
+.brand-text span{ display:none; }
 }
