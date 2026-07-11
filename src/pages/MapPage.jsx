@@ -23,11 +23,37 @@ function MapPage() {
   };
 
   return (
+
     <div className="map-page">
 
+      {/* ================= HEADER ================= */}
+
       <div className="page-header">
+
         <h1>🗺 Peta Interaktif Desa Donowarih</h1>
+
       </div>
+
+      {/* ================= BUTTON ================= */}
+
+      {!showSidebar && (
+
+        <div className="toolbar">
+
+          <button
+            className="show-sidebar"
+            onClick={() => setShowSidebar(true)}
+          >
+
+            ☰ Layer Peta
+
+          </button>
+
+        </div>
+
+      )}
+
+      {/* ================= CONTENT ================= */}
 
       <div
         className={`map-layout ${
@@ -47,25 +73,16 @@ function MapPage() {
 
         <section className="map-container">
 
-          {!showSidebar && (
-            <button
-              className="show-sidebar"
-              onClick={() => setShowSidebar(true)}
-            >
-              ☰
-            </button>
-          )}
-
-          <MapView
-            layers={layers}
-          />
+          <MapView layers={layers} />
 
         </section>
 
       </div>
 
     </div>
+
   );
+
 }
 
 export default MapPage;
