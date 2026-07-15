@@ -1,5 +1,13 @@
 import "./Sidebar.css";
-import { Menu, Layers } from "lucide-react";
+import {
+  Menu,
+  Layers,
+  Building2,
+  School,
+  Church,
+  HeartPulse,
+  MapPinned,
+} from "lucide-react";
 
 function Sidebar({
   onClose,
@@ -36,7 +44,12 @@ function Sidebar({
 
       <hr />
 
-      <h3><Layers size={18} /> Layer Peta</h3>
+      {/* ================= LAYER PETA ================= */}
+
+      <h3>
+        <Layers size={18} />
+        Layer Peta
+      </h3>
 
       <Check
         text="Batas Desa"
@@ -70,6 +83,50 @@ function Sidebar({
 
       <hr />
 
+      {/* ================= FASILITAS UMUM ================= */}
+
+      <h3>
+        <MapPinned size={18} />
+        Fasilitas Umum
+      </h3>
+
+      <Check
+        icon={<Building2 size={18} />}
+        text="Kantor Desa"
+        checked={layers.office}
+        onChange={() => onLayerChange("office")}
+      />
+
+      <Check
+        icon={<School size={18} />}
+        text="Sekolah"
+        checked={layers.school}
+        onChange={() => onLayerChange("school")}
+      />
+
+      <Check
+        icon={<Church size={18} />}
+        text="Masjid"
+        checked={layers.mosque}
+        onChange={() => onLayerChange("mosque")}
+      />
+
+      <Check
+        icon={<HeartPulse size={18} />}
+        text="Posyandu"
+        checked={layers.posyandu}
+        onChange={() => onLayerChange("posyandu")}
+      />
+
+      <Check
+        icon={<MapPinned size={18} />}
+        text="Tempat Wisata"
+        checked={layers.tourism}
+        onChange={() => onLayerChange("tourism")}
+      />
+
+      <hr />
+
       <p className="sidebar-note">
         Centang atau hilangkan layer untuk mengatur tampilan peta.
       </p>
@@ -81,6 +138,8 @@ function Sidebar({
 }
 
 function Check({
+
+  icon,
 
   text,
 
@@ -100,7 +159,21 @@ function Check({
         onChange={onChange}
       />
 
-      <span>{text}</span>
+      {icon && (
+
+        <div className="check-icon">
+
+          {icon}
+
+        </div>
+
+      )}
+
+      <span className="check-text">
+
+        {text}
+
+      </span>
 
     </label>
 

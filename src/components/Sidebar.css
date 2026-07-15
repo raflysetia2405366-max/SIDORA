@@ -1,160 +1,289 @@
 /* ================= SIDEBAR ================= */
 
 .sidebar{
+
     background:#F5F0E1;
+
     border:none;
+
     border-radius:20px;
+
     padding:18px;
+
     color:#1F2937;
+
     position:sticky;
+
     top:95px;
+
     box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    height:100%;
+
 }
 
 /* ================= HEADER ================= */
 
 .sidebar-header{
+
     display:flex;
+
     align-items:center;
+
     justify-content:flex-start;
+
     gap:10px;
+
     margin-bottom:6px;
+
 }
 
-/* Tombol toggle: pink dipertahankan sebagai CTA visual */
+/* ================= TOGGLE ================= */
+
 .sidebar-toggle{
+
     width:42px;
+
     height:42px;
+
     border:none;
+
     border-radius:12px;
+
     background:linear-gradient(
         135deg,
         #FFD8E8,
         #FF9BC2
     );
+
     color:#FF4D8D;
+
     font-size:18px;
+
     font-weight:bold;
+
     cursor:pointer;
+
     transition:.25s;
+
     flex-shrink:0;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
 }
 
 .sidebar-toggle:hover{
+
     transform:scale(1.05);
+
 }
 
 /* ================= TITLE ================= */
 
 .sidebar-title{
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:flex-start;
+
     flex:1;
+
 }
 
 .sidebar h2{
+
     margin:0;
+
     font-size:21px;
+
     color:#1F3D2B;
+
     font-weight:700;
+
     line-height:1;
+
 }
 
 .sidebar-subtitle{
+
     margin:2px 0 0;
+
     color:#6B7280;
+
     font-size:12px;
+
     line-height:1.3;
+
 }
 
 /* ================= GARIS ================= */
 
 .sidebar hr{
+
     margin:18px 0;
+
     border:none;
+
     border-top:1px solid #E0D8C0;
+
 }
 
-/* ================= JUDUL SECTION ================= */
+/* ================= JUDUL ================= */
 
 .sidebar h3{
+
     display:flex;
+
     align-items:center;
+
     gap:8px;
+
     color:#FF4D8D;
+
     margin-bottom:14px;
+
     font-size:18px;
+
     font-weight:700;
+
 }
 
 .sidebar h3 svg{
+
     color:#FF4D8D;
+
     flex-shrink:0;
+
 }
 
 /* ================= CHECKBOX ================= */
 
 .check-item{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     margin-bottom:12px;
+
     width:100%;
+
     cursor:pointer;
+
     padding:10px 12px;
+
     border-radius:12px;
+
     background:#FFFFFF;
+
     border:1px solid transparent;
+
     transition:.25s;
+
 }
 
 .check-item:hover{
+
     background:#FBF8F0;
+
     transform:translateX(3px);
+
 }
 
-/* Saat dicentang: tint pink tipis sebagai state aktif */
+/* ================= CHECKED ================= */
+
 .check-item:has(input:checked){
+
     background:#FFF0F5;
+
     border:1px solid #FFD8E8;
+
 }
 
-.check-item:has(input:checked) span{
+.check-item:has(input:checked) .check-text{
+
     color:#1F3D2B;
+
     font-weight:600;
+
 }
+
+/* ================= INPUT ================= */
 
 .check-item input{
+
     width:18px;
+
     height:18px;
+
     accent-color:#1F3D2B;
+
     flex-shrink:0;
+
 }
 
-.check-item span{
-    display:block;
+/* ================= ICON ================= */
+
+.check-icon{
+
+    width:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#6B7280;
+
+    flex-shrink:0;
+
+}
+
+/* ================= TEXT ================= */
+
+.check-text{
+
     flex:1;
+
     color:#1F2937;
+
     font-size:15px;
+
     font-weight:500;
+
     line-height:1.4;
+
     word-break:break-word;
+
 }
 
 /* ================= NOTE ================= */
 
 .sidebar-note{
+
     margin-top:14px;
+
     padding-top:14px;
+
     border-top:1px solid #E0D8C0;
+
     color:#6B7280;
+
     font-size:13px;
+
     line-height:1.6;
+
 }
 
 /* ================= MOBILE ================= */
@@ -162,8 +291,11 @@
 @media(max-width:992px){
 
 .sidebar{
+
     position:static;
+
     margin-bottom:20px;
+
 }
 
 }
