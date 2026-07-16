@@ -1,0 +1,14 @@
+:root{
+    --color-primary:#1F3D2B;
+    --color-accent:#FF4D8D;
+    --color-accent-light:#FFD8E8;
+    --color-accent-mid:#FF9BC2;
+    --color-bg-page:#FAF6EC;
+    --color-bg-panel:#F5F0E1;
+    --color-bg-white:#FFFFFF;
+    --color-bg-hover:#FBF8F0;
+    --color-bg-checked:#FFF0F5;
+    --color-border:#E0D8C0;
+    --color-text-main:#1F2937;
+    --color-text-muted:#6B7280;
+}
