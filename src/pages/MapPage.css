@@ -8,17 +8,12 @@
     padding:30px;
     display:flex;
     flex-direction:column;
-    overflow-x:hidden;
 }
 
 /* ==========================================
    HEADER
 ========================================== */
 .page-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
     margin-bottom:18px;
 }
 
@@ -38,9 +33,17 @@
     flex-shrink:0;
 }
 
+/* ==========================================
+   TOOLBAR
+========================================== */
+.toolbar{
+    display:flex;
+    justify-content:flex-start;
+    margin-bottom:20px;
+}
+
 .show-sidebar{
     width:auto;
-    flex-shrink:0;
     padding:12px 20px;
     box-shadow:0 8px 20px rgba(255,95,162,.25);
 }
@@ -51,28 +54,29 @@
 }
 
 /* ==========================================
-   LAYOUT (DESKTOP)
+   LAYOUT
 ========================================== */
 .map-layout{
     flex:1;
     display:grid;
     grid-template-columns:320px 1fr;
-    grid-template-rows:1fr;
     gap:24px;
     align-items:stretch;
-    height:calc(100vh - 190px);
-    overflow:hidden;
-    position:relative;
+    min-height:calc(100vh - 190px);
     transition:grid-template-columns .35s ease;
 }
 
+/* ==========================================
+   SIDEBAR
+========================================== */
 .sidebar-container{
     height:100%;
-    min-width:0;
-    overflow:hidden;
     transition:.35s ease;
 }
 
+/* ==========================================
+   MAP
+========================================== */
 .map-container{
     display:flex;
     flex-direction:column;
@@ -81,6 +85,9 @@
     position:relative;
 }
 
+/* ==========================================
+   SIDEBAR CLOSE
+========================================== */
 .map-layout.sidebar-close{
     grid-template-columns:0 1fr;
 }
@@ -88,84 +95,52 @@
 .map-layout.sidebar-close .sidebar-container{
     width:0;
     opacity:0;
+    overflow:hidden;
     pointer-events:none;
-}
-
-/* backdrop tidak dipakai di desktop */
-.sidebar-backdrop{
-    display:none;
 }
 
 /* ==========================================
-   TABLET & MOBILE — DRAWER OVERLAY
+   TABLET
 ========================================== */
 @media(max-width:992px){
+.map-page{
+    padding:22px;
+}
+.map-layout{
+    grid-template-columns:1fr;
+    min-height:auto;
+}
+.sidebar-container{
+    width:100%!important;
+    height:auto;
+    opacity:1!important;
+    pointer-events:auto!important;
+}
+.page-header h1{
+    font-size:30px;
+}
+}
 
+/* ==========================================
+   MOBILE
+========================================== */
+@media(max-width:768px){
 .map-page{
     padding:16px;
 }
-
-.map-layout{
-    display:block;
-    height:auto;
-    overflow:visible;
-    position:static;
+.page-header{
+    margin-bottom:15px;
 }
-
-.map-container{
-    width:100%;
-    height:auto;
-}
-
-/* sidebar jadi drawer melayang, fixed ke viewport */
-.sidebar-container{
-    position:fixed;
-    top:0;
-    left:0;
-    height:100dvh;
-    width:82%;
-    max-width:320px;
-    z-index:1000;
-    overflow-y:auto;
-    transform:translateX(-100%);
-    pointer-events:none;
-    transition:transform .35s ease;
-    box-shadow:0 0 40px rgba(0,0,0,.25);
-}
-
-.map-layout.sidebar-open .sidebar-container{
-    transform:translateX(0);
-    pointer-events:auto;
-}
-
-/* backdrop gelap di belakang drawer */
-.sidebar-backdrop{
-    display:block;
-    position:fixed;
-    inset:0;
-    background:rgba(15,23,42,.55);
-    z-index:999;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .3s ease;
-}
-
-.map-layout.sidebar-open .sidebar-backdrop{
-    opacity:1;
-    pointer-events:auto;
-}
-
 .page-header h1{
     font-size:26px;
     line-height:1.3;
 }
-
-.page-header{
-    margin-bottom:15px;
-    flex-wrap:wrap;
+.toolbar{
+    margin-bottom:16px;
 }
-
 .show-sidebar{
+    width:100%;
+    justify-content:center;
     padding:12px;
     font-size:15px;
 }
@@ -177,8 +152,5 @@
 @media(max-width:480px){
 .page-header h1{
     font-size:22px;
-}
-.sidebar-container{
-    width:88%;
 }
 }
