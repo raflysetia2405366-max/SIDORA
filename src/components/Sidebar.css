@@ -9,6 +9,8 @@
     top:95px;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
     height:100%;
+    width:320px;
+    max-width:320px;
 }
 
 /* ================= HEADER ================= */
@@ -163,5 +165,44 @@
 .sidebar{
     position:static;
     margin-bottom:20px;
+    width:100%;
+    max-width:100%;
 }
+}
+
+/* ================= INFORMASI DESA ================= */
+
+.info-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.info-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 2px;
+    border-bottom:1px dashed var(--color-border);
+}
+
+.info-item:last-child{
+    border-bottom:none;
+}
+
+.info-item svg{
+    color:var(--color-primary);
+    flex-shrink:0;
+}
+
+.info-item span{
+    flex:1;
+    font-size:14px;
+    color:var(--color-text-main);
+}
+
+.info-item strong{
+    font-size:14px;
+    font-weight:700;
+    color:var(--color-primary);
 }
