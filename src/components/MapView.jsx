@@ -185,7 +185,7 @@ function MapView({ layers }) {
       if (desa) {
         return {
           fillOpacity: 0,
-          strokeColor: "#00ff55",
+          strokeColor: "#fdfdfd",
           strokeWeight: 1,
         };
       }
