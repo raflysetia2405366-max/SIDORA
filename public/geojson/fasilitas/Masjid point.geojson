@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Masjid point",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"id":1,"Masjid":"Masjid Miftahut Thohir"},"geometry":{"type":"Point","coordinates":[112.579947970464744,-7.844522239675421]}},
+{"type":"Feature","properties":{"id":2,"Masjid":"Masjid Mambaurahman"},"geometry":{"type":"Point","coordinates":[112.583001402770833,-7.853971906413856]}},
+{"type":"Feature","properties":{"id":3,"Masjid":"Masjid Jami' Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.577288682574974,-7.876351507383041]}},
+{"type":"Feature","properties":{"id":4,"Masjid":"Masjid Daarul Jannah"},"geometry":{"type":"Point","coordinates":[112.585648328100163,-7.883092830850348]}},
+{"type":"Feature","properties":{"id":5,"Masjid":"Masjid Darussalam"},"geometry":{"type":"Point","coordinates":[112.590191102348157,-7.887410488514742]}},
+{"type":"Feature","properties":{"id":6,"Masjid":"Masjid Baitul Makmur"},"geometry":{"type":"Point","coordinates":[112.586489368608653,-7.891912407507414]}}
+]
+}

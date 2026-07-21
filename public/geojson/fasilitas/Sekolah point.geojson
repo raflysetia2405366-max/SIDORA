@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "Sekolah point",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"id":1,"Sekolah":"SDN 2 Donowarih"},"geometry":{"type":"Point","coordinates":[112.580698008611606,-7.845950325933604]}},
+{"type":"Feature","properties":{"id":2,"Sekolah":"SMPN 2 Karangploso"},"geometry":{"type":"Point","coordinates":[112.580857307528959,-7.845709335263771]}},
+{"type":"Feature","properties":{"id":3,"Sekolah":"KB Harapan Bangsa"},"geometry":{"type":"Point","coordinates":[112.580129895649563,-7.846677830503368]}},
+{"type":"Feature","properties":{"id":5,"Sekolah":"PAUD Enggal Permata"},"geometry":{"type":"Point","coordinates":[112.583393144776039,-7.854749742236937]}},
+{"type":"Feature","properties":{"id":6,"Sekolah":"MI Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.577348621932259,-7.876070263926938]}},
+{"type":"Feature","properties":{"id":7,"Sekolah":"MTS Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.577534824426479,-7.875785918601882]}},
+{"type":"Feature","properties":{"id":8,"Sekolah":"KB-RA Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.578077634946524,-7.875775163223157]}},
+{"type":"Feature","properties":{"id":9,"Sekolah":"Pondok Pesantren Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.577597003959767,-7.876259491371394]}},
+{"type":"Feature","properties":{"id":10,"Sekolah":"MA Al-Hidayah"},"geometry":{"type":"Point","coordinates":[112.57677186474821,-7.876648701639031]}},
+{"type":"Feature","properties":{"id":11,"Sekolah":"SDN 1 Donowarih"},"geometry":{"type":"Point","coordinates":[112.579605907042421,-7.878091266810601]}},
+{"type":"Feature","properties":{"id":12,"Sekolah":"TK Ar-Rohmah"},"geometry":{"type":"Point","coordinates":[112.589761673404055,-7.88730459311142]}},
+{"type":"Feature","properties":{"id":13,"Sekolah":"SLB Widya Shantika"},"geometry":{"type":"Point","coordinates":[112.58798165822499,-7.889604227525187]}}
+]
+}

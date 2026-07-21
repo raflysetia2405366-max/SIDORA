@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Balai Desa Point",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"id":1,"Balai":"Balai Desa Donowarih"},"geometry":{"type":"Point","coordinates":[112.584332966650962,-7.881895107014484]}}
+]
+}
