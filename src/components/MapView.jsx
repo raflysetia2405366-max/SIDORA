@@ -219,6 +219,11 @@ function MapView({ layers }) {
     const bounds = new window.google.maps.LatLngBounds();
 
     mapRef.current.data.forEach((feature) => {
+      // Layer batas desa dikecualikan dari perhitungan bounds, supaya
+      // toggle checklist "Batas Desa" tidak memicu zoom in/out.
+      // Layer lain (dusun, fasilitas) tetap dihitung seperti biasa.
+      if (feature.getProperty("_layerKey") === "desa") return;
+
       processPoints(feature.getGeometry(), bounds.extend, bounds);
     });
 
@@ -227,10 +232,9 @@ function MapView({ layers }) {
     }
   };
 
-  const syncLayers = useCallback(async (opts = {}) => {
+  const syncLayers = useCallback(async () => {
     if (!mapRef.current) return;
 
-    const { fit = false } = opts;
     const currentLayers = layersRef.current;
 
     await Promise.all(
@@ -250,20 +254,13 @@ function MapView({ layers }) {
     );
 
     applyStyle();
-
-    // fitBounds hanya dipanggil saat peta pertama kali dimuat (fit: true
-    // dari onLoad), bukan setiap kali user toggle checklist layer.
-    // Ini berlaku untuk SEMUA layer (batas desa maupun fasilitas lainnya),
-    // supaya toggle checklist tidak memicu zoom in/out otomatis.
-    if (fit) {
-      fitMap();
-    }
+    fitMap();
   }, []);
 
   const onLoad = useCallback(
     async (map) => {
       mapRef.current = map;
-      await syncLayers({ fit: true });
+      await syncLayers();
     },
     [syncLayers]
   );
