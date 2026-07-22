@@ -122,11 +122,6 @@ function MapView({ layers }) {
     layersRef.current = layers;
   }, [layers]);
 
-  // BARU: simpan snapshot layer sebelumnya, dipakai untuk mendeteksi
-  // apakah perubahan yang terjadi HANYA toggle "desa" saja atau bukan.
-  // Kalau cuma "desa" yang berubah, fitBounds/zoom peta tidak dipanggil.
-  const prevLayersRef = useRef(layers);
-
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
@@ -184,19 +179,16 @@ function MapView({ layers }) {
       }
 
       // ================= STYLE BATAS DESA / DUSUN =================
-      // DIUBAH: cek layer desa lewat "_layerKey" (sudah pasti benar,
-      // ditandai sendiri saat loadLayer) — jangan tebak dari properti
-      // GeoJSON seperti "WADMKD" yang bisa saja beda nama/kosong.
-      if (layerKey === "desa") {
+      const dusun = feature.getProperty("Dusun");
+      const desa = feature.getProperty("WADMKD");
+
+      if (desa) {
         return {
           fillOpacity: 0,
-          strokeColor: "#ffffff",
-          strokeOpacity: 1,
+          strokeColor: "#fdfdfd",
           strokeWeight: 3,
         };
       }
-
-      const dusun = feature.getProperty("Dusun");
 
       if (dusun === "Borogragal") {
         return { fillOpacity: 0, strokeColor: "#ef4444", strokeWeight: 2 };
@@ -238,13 +230,6 @@ function MapView({ layers }) {
     if (!mapRef.current) return;
 
     const currentLayers = layersRef.current;
-    // BARU: ambil snapshot "sebelum" DI AWAL (sebelum proses async apa pun),
-    // lalu langsung update ref ke nilai sekarang. Ini mencegah race condition
-    // kalau syncLayers terpanggil beberapa kali berdekatan (misal React
-    // StrictMode di dev, atau beberapa perubahan state hampir bersamaan) —
-    // supaya deteksi "apa yang berubah" tidak salah baca state basi.
-    const prevLayers = prevLayersRef.current;
-    prevLayersRef.current = currentLayers;
 
     await Promise.all(
       Object.keys(LAYER_FILES).map(async (key) => {
@@ -263,19 +248,7 @@ function MapView({ layers }) {
     );
 
     applyStyle();
-
-    // BARU: cek key layer mana saja yang berubah dibanding sync sebelumnya.
-    // Kalau yang berubah cuma "desa", jangan panggil fitMap() supaya
-    // zoom/posisi peta tidak berubah saat checklist batas desa di-toggle.
-    const changedKeys = Object.keys(LAYER_FILES).filter(
-      (key) => currentLayers[key] !== prevLayers[key]
-    );
-    const onlyDesaToggled =
-      changedKeys.length === 1 && changedKeys[0] === "desa";
-
-    if (!onlyDesaToggled) {
-      fitMap();
-    }
+    fitMap();
   }, []);
 
   const onLoad = useCallback(
