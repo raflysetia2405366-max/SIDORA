@@ -184,11 +184,10 @@ function MapView({ layers }) {
       }
 
       // ================= STYLE BATAS DESA / DUSUN =================
-      const dusun = feature.getProperty("Dusun");
-      const desa = feature.getProperty("WADMKD");
-
-      if (desa) {
-        // DIUBAH: warna batas desa jadi putih solid, tidak terlalu transparan
+      // DIUBAH: cek layer desa lewat "_layerKey" (sudah pasti benar,
+      // ditandai sendiri saat loadLayer) — jangan tebak dari properti
+      // GeoJSON seperti "WADMKD" yang bisa saja beda nama/kosong.
+      if (layerKey === "desa") {
         return {
           fillOpacity: 0,
           strokeColor: "#ffffff",
@@ -196,6 +195,8 @@ function MapView({ layers }) {
           strokeWeight: 3,
         };
       }
+
+      const dusun = feature.getProperty("Dusun");
 
       if (dusun === "Borogragal") {
         return { fillOpacity: 0, strokeColor: "#ef4444", strokeWeight: 2 };
@@ -237,7 +238,13 @@ function MapView({ layers }) {
     if (!mapRef.current) return;
 
     const currentLayers = layersRef.current;
-    const prevLayers = prevLayersRef.current; // BARU
+    // BARU: ambil snapshot "sebelum" DI AWAL (sebelum proses async apa pun),
+    // lalu langsung update ref ke nilai sekarang. Ini mencegah race condition
+    // kalau syncLayers terpanggil beberapa kali berdekatan (misal React
+    // StrictMode di dev, atau beberapa perubahan state hampir bersamaan) —
+    // supaya deteksi "apa yang berubah" tidak salah baca state basi.
+    const prevLayers = prevLayersRef.current;
+    prevLayersRef.current = currentLayers;
 
     await Promise.all(
       Object.keys(LAYER_FILES).map(async (key) => {
@@ -269,8 +276,6 @@ function MapView({ layers }) {
     if (!onlyDesaToggled) {
       fitMap();
     }
-
-    prevLayersRef.current = currentLayers; // BARU
   }, []);
 
   const onLoad = useCallback(
