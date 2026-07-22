@@ -184,10 +184,10 @@ function MapView({ layers }) {
       // desa pasti kena dan tidak jatuh ke default warna hijau.
       if (layerKey === "desa") {
         return {
-          fillOpacity: 0,
-          strokeColor: "#ffffff",
+          fillOpacity: 0.75,
+          strokeColor: "#fefefe",
           strokeOpacity: 0.5,
-          strokeWeight: 3,
+          strokeWeight: 2,
         };
       }
 
