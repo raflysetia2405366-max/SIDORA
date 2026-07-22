@@ -179,17 +179,19 @@ function MapView({ layers }) {
       }
 
       // ================= STYLE BATAS DESA / DUSUN =================
-      const dusun = feature.getProperty("Dusun");
-      const desa = feature.getProperty("WADMKD");
-
-      if (desa) {
+      // Cek langsung ke _layerKey (bukan ke property WADMKD yang bisa saja
+      // tidak ada / berbeda nama di file geojson-nya), supaya style batas
+      // desa pasti kena dan tidak jatuh ke default warna hijau.
+      if (layerKey === "desa") {
         return {
           fillOpacity: 0,
           strokeColor: "#ffffff",
-          strokeOpacity: 3,
+          strokeOpacity: 0.5,
           strokeWeight: 3,
         };
       }
+
+      const dusun = feature.getProperty("Dusun");
 
       if (dusun === "Borogragal") {
         return { fillOpacity: 0, strokeColor: "#ef4444", strokeWeight: 2 };
