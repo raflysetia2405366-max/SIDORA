@@ -186,7 +186,7 @@ function MapView({ layers }) {
         return {
           fillOpacity: 0,
           strokeColor: "#ffffff",
-          strokeOpacity: 0.5,
+          strokeOpacity: 3,
           strokeWeight: 3,
         };
       }
