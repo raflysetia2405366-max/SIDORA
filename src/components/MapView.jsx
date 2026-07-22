@@ -185,7 +185,8 @@ function MapView({ layers }) {
       if (desa) {
         return {
           fillOpacity: 0,
-          strokeColor: "#fdfdfd",
+          strokeColor: "#ffffff",
+          strokeOpacity: 0.5,
           strokeWeight: 3,
         };
       }
@@ -226,9 +227,10 @@ function MapView({ layers }) {
     }
   };
 
-  const syncLayers = useCallback(async () => {
+  const syncLayers = useCallback(async (opts = {}) => {
     if (!mapRef.current) return;
 
+    const { fit = false } = opts;
     const currentLayers = layersRef.current;
 
     await Promise.all(
@@ -248,13 +250,20 @@ function MapView({ layers }) {
     );
 
     applyStyle();
-    fitMap();
+
+    // fitBounds hanya dipanggil saat peta pertama kali dimuat (fit: true
+    // dari onLoad), bukan setiap kali user toggle checklist layer.
+    // Ini berlaku untuk SEMUA layer (batas desa maupun fasilitas lainnya),
+    // supaya toggle checklist tidak memicu zoom in/out otomatis.
+    if (fit) {
+      fitMap();
+    }
   }, []);
 
   const onLoad = useCallback(
     async (map) => {
       mapRef.current = map;
-      await syncLayers();
+      await syncLayers({ fit: true });
     },
     [syncLayers]
   );
